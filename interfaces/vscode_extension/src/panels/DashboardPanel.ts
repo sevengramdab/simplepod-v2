@@ -48,7 +48,7 @@ export class DashboardPanel {
      * so we open the URL in a browser for capture instead.
      */
     public requestCapture(): void {
-        const url = this._client['baseUrl'] || 'http://localhost:8000';
+        const url = this._client.getBaseUrl() || 'http://localhost:8000';
         this._panel.webview.postMessage({ command: 'triggerCapture', url });
     }
 
@@ -85,12 +85,13 @@ export class DashboardPanel {
      * (styling, JS, WebSockets, etc.) works exactly like in Chrome.
      */
     private _getHtmlForWebview(webview: vscode.Webview): string {
-        const apiBase = this._client['baseUrl'] || 'http://localhost:8000';
+        const apiBase = this._client.getBaseUrl() || 'http://localhost:8000';
+        const apiOrigin = new URL(apiBase).origin;
         const csp = [
             "default-src 'none'",
             "script-src 'unsafe-inline'",
             "style-src 'unsafe-inline'",
-            `frame-src ${apiBase} http://localhost:* http://127.0.0.1:*`,
+            `frame-src ${apiOrigin}`,
             "img-src 'self' data: blob: *",
         ].join('; ');
 

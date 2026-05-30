@@ -7,6 +7,7 @@ export class ControlPanel {
     private readonly _disposables: vscode.Disposable[] = [];
     private _client: SwarmClient;
     private _pollTimer: NodeJS.Timeout | null = null;
+    private _taskPollTimer: NodeJS.Timeout | null = null;
 
     public static createOrShow(extensionUri: vscode.Uri, client: SwarmClient): void {
         const column = vscode.window.activeTextEditor
@@ -87,10 +88,16 @@ export class ControlPanel {
             this._panel.webview.postMessage({ command: 'taskQueued', taskId: res.task_id, model: res.model });
             // Poll for result
             let attempts = 0;
-            const poll = setInterval(async () => {
+            if (this._taskPollTimer) { clearInterval(this._taskPollTimer); }
+            this._taskPollTimer = setInterval(async () => {
+                if (!ControlPanel.currentPanel || this._panel.disposed) {
+                    if (this._taskPollTimer) { clearInterval(this._taskPollTimer); this._taskPollTimer = null; }
+                    return;
+                }
                 attempts++;
                 if (attempts > 60) {
-                    clearInterval(poll);
+                    clearInterval(this._taskPollTimer!);
+                    this._taskPollTimer = null;
                     this._panel.webview.postMessage({ command: 'taskResult', error: 'Timed out waiting for response' });
                     this._panel.webview.postMessage({ command: 'thinking', show: false });
                     return;
@@ -98,7 +105,8 @@ export class ControlPanel {
                 const task = await this._client.getTask(res.task_id);
                 if (task) {
                     if (task.status === 'completed') {
-                        clearInterval(poll);
+                        clearInterval(this._taskPollTimer!);
+                        this._taskPollTimer = null;
                         const responseText = task.result?.response || '';
                         this._panel.webview.postMessage({
                             command: 'taskResult',
@@ -108,7 +116,8 @@ export class ControlPanel {
                         });
                         this._panel.webview.postMessage({ command: 'thinking', show: false });
                     } else if (task.status === 'failed') {
-                        clearInterval(poll);
+                        clearInterval(this._taskPollTimer!);
+                        this._taskPollTimer = null;
                         const err = task.result?.error || task.error || 'Unknown error';
                         this._panel.webview.postMessage({ command: 'taskResult', error: err });
                         this._panel.webview.postMessage({ command: 'thinking', show: false });
@@ -629,6 +638,7 @@ export class ControlPanel {
 
     public dispose(): void {
         if (this._pollTimer) { clearInterval(this._pollTimer); }
+        if (this._taskPollTimer) { clearInterval(this._taskPollTimer); this._taskPollTimer = null; }
         ControlPanel.currentPanel = undefined;
         this._panel.dispose();
         while (this._disposables.length) {

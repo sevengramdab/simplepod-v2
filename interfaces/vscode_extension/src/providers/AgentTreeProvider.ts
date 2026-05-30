@@ -12,10 +12,10 @@ export class AgentTreeItem extends vscode.TreeItem {
     ) {
         super(agentId, collapsibleState);
         const isDead = status === 'dead' || !alive;
-        const icon = isDead ? '$(debug-disconnect)' : status === 'running' ? '$(play-circle)' : '$(circle-large-filled)';
+        const icon = isDead ? 'debug-disconnect' : status === 'running' ? 'play-circle' : 'circle-large-filled';
         this.description = `${tasksCompleted}✓ / ${tasksFailed}✗ · ${isDead ? 'DEAD' : status}`;
         this.tooltip = `${agentId}\nStatus: ${status}\nAlive: ${alive}\nCompleted: ${tasksCompleted}\nFailed: ${tasksFailed}\n\n${isDead ? 'Click to remove from registry' : 'Click to open detail / kill'}`;
-        this.iconPath = new vscode.ThemeColor(isDead ? 'charts.red' : status === 'running' ? 'charts.green' : 'charts.blue');
+        this.iconPath = new vscode.ThemeIcon(icon, new vscode.ThemeColor(isDead ? 'charts.red' : status === 'running' ? 'charts.green' : 'charts.blue'));
         this.contextValue = isDead ? 'deadAgent' : 'aliveAgent';
     }
 }

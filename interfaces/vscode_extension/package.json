@@ -150,6 +150,66 @@
         "title": "Remote: Capture Screenshot",
         "category": "SimplePod Remote",
         "icon": "$(device-camera)"
+      },
+      {
+        "command": "simplepod.openKimiBridge",
+        "title": "Open Kimi Bridge",
+        "category": "SimplePod",
+        "icon": "$(remote-explorer)"
+      },
+      {
+        "command": "simplepod.startShadowWatcher",
+        "title": "Start Shadow PC Watcher",
+        "category": "SimplePod",
+        "icon": "$(eye-watch)"
+      },
+      {
+        "command": "simplepod.cleanupAnalyze",
+        "title": "Cleanup: Analyze Disk",
+        "category": "SimplePod Cleanup",
+        "icon": "$(server-environment)"
+      },
+      {
+        "command": "simplepod.cleanupGames",
+        "title": "Cleanup: List Games",
+        "category": "SimplePod Cleanup",
+        "icon": "$(device-gamepad)"
+      },
+      {
+        "command": "simplepod.cleanupLargeFiles",
+        "title": "Cleanup: Find Large Files",
+        "category": "SimplePod Cleanup",
+        "icon": "$(search)"
+      },
+      {
+        "command": "simplepod.cleanupSafetyAudit",
+        "title": "Cleanup: Safety Audit",
+        "category": "SimplePod Cleanup",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "simplepod.cleanupExecute",
+        "title": "Cleanup: Execute Delete",
+        "category": "SimplePod Cleanup",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "simplepod.meshCleanupAnalyze",
+        "title": "Mesh Cleanup: Analyze Remote Node",
+        "category": "SimplePod Mesh",
+        "icon": "$(server-environment)"
+      },
+      {
+        "command": "simplepod.meshCleanupGames",
+        "title": "Mesh Cleanup: List Remote Games",
+        "category": "SimplePod Mesh",
+        "icon": "$(device-gamepad)"
+      },
+      {
+        "command": "simplepod.meshCleanupLargeFiles",
+        "title": "Mesh Cleanup: Find Remote Large Files",
+        "category": "SimplePod Mesh",
+        "icon": "$(search)"
       }
     ],
     "keybindings": [
@@ -182,6 +242,24 @@
         "key": "ctrl+shift+i",
         "mac": "cmd+shift+i",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "simplepod.openKimiBridge",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "simplepod.cleanupAnalyze",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "simplepod.cleanupLargeFiles",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus"
       }
     ],
     "menus": {
@@ -190,7 +268,17 @@
         { "command": "simplepod.quickChat" },
         { "command": "simplepod.activateSwarm" },
         { "command": "simplepod.shutdownSwarm" },
-        { "command": "simplepod.spawnAgents" }
+        { "command": "simplepod.spawnAgents" },
+        { "command": "simplepod.openKimiBridge" },
+        { "command": "simplepod.startShadowWatcher" },
+        { "command": "simplepod.cleanupAnalyze" },
+        { "command": "simplepod.cleanupGames" },
+        { "command": "simplepod.cleanupLargeFiles" },
+        { "command": "simplepod.cleanupSafetyAudit" },
+        { "command": "simplepod.cleanupExecute" },
+        { "command": "simplepod.meshCleanupAnalyze" },
+        { "command": "simplepod.meshCleanupGames" },
+        { "command": "simplepod.meshCleanupLargeFiles" }
       ],
       "view/title": [
         {
@@ -207,6 +295,11 @@
           "command": "simplepod.spawnAgents",
           "when": "view == simplepod.agents",
           "group": "navigation@2"
+        },
+        {
+          "command": "simplepod.openKimiBridge",
+          "when": "view == simplepod.agents",
+          "group": "navigation@3"
         }
       ],
       "view/item/context": [

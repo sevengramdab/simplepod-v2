@@ -8,9 +8,9 @@ from __future__ import annotations
 
 import base64
 import io
-from typing import Optional
+from typing import List, Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
 
 from core.simpleswarm.remote_client import get_remote_pool
@@ -130,4 +130,140 @@ async def mesh_remote_drag(node_id: str, req: DragRequest):
     result = client._request("POST", "/remote/drag", req.model_dump(), timeout=10)
     if not result.get("success"):
         raise HTTPException(status_code=502, detail=result.get("error", "Drag failed"))
+    return result.get("data", {})
+
+
+class InjectRequest(BaseModel):
+    prompt: str = Field(...)
+    model: Optional[str] = Field(None)
+    mode: Optional[str] = Field(None)
+
+
+class CleanupAnalyzeRequest(BaseModel):
+    drive: str = Field("C:/")
+
+
+class CleanupLargeFilesRequest(BaseModel):
+    drive: str = Field("C:/")
+    min_size_mb: float = Field(100.0, ge=1)
+    max_files: int = Field(200, ge=1, le=1000)
+
+
+class CleanupTarget(BaseModel):
+    path: str = Field(...)
+    force: bool = Field(False)
+
+
+class CleanupExecuteRequest(BaseModel):
+    targets: List[CleanupTarget] = Field(...)
+
+
+@router.post("/{node_id}/cleanup/analyze")
+async def mesh_cleanup_analyze(node_id: str, req: CleanupAnalyzeRequest):
+    """Run disk cleanup analysis on a remote node."""
+    client = _get_client(node_id)
+    result = client._request("POST", "/tools/cleanup/analyze", req.model_dump(), timeout=30)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Cleanup analyze failed"))
+    return result.get("data", {})
+
+
+@router.post("/{node_id}/cleanup/games")
+async def mesh_cleanup_games(node_id: str, req: CleanupAnalyzeRequest):
+    """Scan for games on a remote node."""
+    client = _get_client(node_id)
+    result = client._request("POST", "/tools/cleanup/games", req.model_dump(), timeout=30)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Cleanup games failed"))
+    return result.get("data", {})
+
+
+@router.post("/{node_id}/cleanup/large-files")
+async def mesh_cleanup_large_files(node_id: str, req: CleanupLargeFilesRequest):
+    """Scan for large files on a remote node."""
+    client = _get_client(node_id)
+    result = client._request("POST", "/tools/cleanup/large-files", req.model_dump(), timeout=60)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Cleanup large-files failed"))
+    return result.get("data", {})
+
+
+@router.post("/{node_id}/cleanup/safety")
+async def mesh_cleanup_safety(node_id: str, req: CleanupAnalyzeRequest):
+    """Run full safety audit on a remote node."""
+    client = _get_client(node_id)
+    result = client._request("POST", "/tools/cleanup/safety", req.model_dump(), timeout=60)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Cleanup safety failed"))
+    return result.get("data", {})
+
+
+@router.post("/{node_id}/cleanup/execute")
+async def mesh_cleanup_execute(node_id: str, req: CleanupExecuteRequest):
+    """Execute cleanup on a remote node."""
+    client = _get_client(node_id)
+    result = client._request("POST", "/tools/cleanup/execute", req.model_dump(), timeout=60)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Cleanup execute failed"))
+    return result.get("data", {})
+
+
+@router.get("/{node_id}/status")
+async def mesh_remote_status(node_id: str):
+    """Get system status from a remote node."""
+    client = _get_client(node_id)
+    result = client._request("GET", "/remote/status", timeout=10)
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Status failed"))
+    return result.get("data", {})
+
+
+@router.get("/{node_id}/logs")
+async def mesh_remote_logs(
+    node_id: str,
+    lines: int = Query(50, ge=1, le=1000),
+    logfile: str = Query("backend"),
+):
+    """Tail logs from a remote node."""
+    client = _get_client(node_id)
+    result = client._request(
+        "GET",
+        f"/remote/logs?lines={lines}&logfile={logfile}",
+        timeout=10,
+    )
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Logs failed"))
+    return result.get("data", {})
+
+
+@router.get("/{node_id}/processes")
+async def mesh_remote_processes(
+    node_id: str,
+    filter: Optional[str] = Query(None),
+):
+    """List processes on a remote node."""
+    client = _get_client(node_id)
+    qs = f"filter={filter}" if filter else ""
+    result = client._request(
+        "GET",
+        f"/remote/processes?{qs}",
+        timeout=10,
+    )
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Processes failed"))
+    return result.get("data", {})
+
+
+@router.post("/{node_id}/inject")
+async def mesh_remote_inject(node_id: str, req: InjectRequest):
+    """Inject a prompt/task into a remote node."""
+    client = _get_client(node_id)
+    result = client._request(
+        "POST",
+        "/remote/inject",
+        req.model_dump(),
+        timeout=10,
+    )
+    if not result.get("success"):
+        raise HTTPException(status_code=502, detail=result.get("error", "Inject failed"))
     return result.get("data", {})

@@ -1,9 +1,11 @@
 @echo off
 setlocal
 
-set "PROJECT_ROOT=D:\vs code project files\outputs\simplepod_swarm"
+set "PROJECT_ROOT=%USERPROFILE%\simplepod-shadow"
 set "PYTHON=%PROJECT_ROOT%\.venv\Scripts\python.exe"
-set "SIMPLEPOD_NODE_ID=shadow_pc"
+set "SIMPOD_NODE_ID=shadow_pc"
+set "SIMPOD_PORT=8002"
+set "PYTHONPATH=%PROJECT_ROOT%"
 
 cd /d "%PROJECT_ROOT%"
 
@@ -11,7 +13,8 @@ echo ===========================================
 echo   SimplePod Shadow PC (RTX 3080)
 echo ===========================================
 echo.
-echo Setting NODE_IDENTITY=shadow_pc
+echo Setting NODE_ID=%SIMPOD_NODE_ID%
+echo Setting PORT=%SIMPOD_PORT%
 echo.
 
-"%PYTHON%" -m uvicorn interfaces.web_ui.backend.main:app --host 0.0.0.0 --port 8000
+"%PYTHON%" shadow_node.py

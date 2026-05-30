@@ -44,20 +44,25 @@ python -m pip install --upgrade pip
 if exist requirements.txt (
     pip install -r requirements.txt
 ) else (
-    pip install fastapi uvicorn pydantic pyyaml pyautogui pillow requests
+    pip install fastapi uvicorn pydantic pyyaml pyautogui pillow requests python-multipart streamlit psutil httpx
 )
+
+:: Create logs directory
+if not exist "logs" mkdir logs
 
 :: Start shadow node
 echo [4/4] Starting Shadow Node...
 echo.
 echo   Node ID:   shadow_pc
 echo   IP:        %SHADOW_PC_IP%
-echo   Port:      8000
+echo   Port:      8002
 echo.
 echo   Your main PC should now see this node at:
-echo   http://%SHADOW_PC_IP%:8000/health
+echo   http://%SHADOW_PC_IP%:8002/health
 echo.
 echo   Press Ctrl+C to stop.
 echo ===========================================
 
+set "PYTHONPATH=%INSTALL_DIR%"
+set "SIMPOD_PORT=8002"
 python shadow_node.py

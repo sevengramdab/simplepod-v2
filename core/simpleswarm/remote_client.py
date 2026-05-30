@@ -69,6 +69,28 @@ class RemoteNodeClient:
         """Get remote node compute metrics."""
         return self._request("GET", "/simpleswarm/nodes/metrics", timeout=10)
 
+    def cleanup_analyze(self, drive: str = "C:/") -> dict:
+        """Run disk cleanup analysis on the remote node."""
+        return self._request("POST", "/tools/cleanup/analyze", {"drive": drive}, timeout=30)
+
+    def cleanup_games(self, drive: str = "C:/") -> dict:
+        """Scan for games on the remote node."""
+        return self._request("POST", "/tools/cleanup/games", {"drive": drive}, timeout=30)
+
+    def cleanup_large_files(self, drive: str = "C:/", min_size_mb: float = 100.0, max_files: int = 200) -> dict:
+        """Scan for large files on the remote node."""
+        return self._request("POST", "/tools/cleanup/large-files", {
+            "drive": drive, "min_size_mb": min_size_mb, "max_files": max_files
+        }, timeout=60)
+
+    def cleanup_safety(self, drive: str = "C:/") -> dict:
+        """Run full safety audit on the remote node."""
+        return self._request("POST", "/tools/cleanup/safety", {"drive": drive}, timeout=60)
+
+    def cleanup_execute(self, targets: list) -> dict:
+        """Execute cleanup on the remote node."""
+        return self._request("POST", "/tools/cleanup/execute", {"targets": targets}, timeout=60)
+
     @property
     def is_healthy(self) -> bool:
         if time.time() - self._last_health_check > 30:

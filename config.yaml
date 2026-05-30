@@ -18,6 +18,7 @@ nodes:
   shadow_pc:
     hostname: "shadow-workstation"
     ip: "100.64.0.2"  # Tailscale IP
+    port: 8002        # Shadow node runs on dedicated port to avoid collision with main backend
     role: "shadow_pc"
     gpu_type: "rtx_3080"
     vram_mb: 10240

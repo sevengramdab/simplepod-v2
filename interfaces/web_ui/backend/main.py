@@ -17,6 +17,7 @@ from __future__ import annotations
 
 from contextlib import asynccontextmanager
 from pathlib import Path
+import asyncio
 import threading
 import os
 
@@ -25,7 +26,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from .dependencies import init_dependencies
-from .routers import nodes, remote, routing, settings as settings_router, sitk, swarm, telemetry, orbstudio, screenshot, hardware, simpleswarm, swarm_coder, mesh, projects, mesh_remote, billing, notifications, stripe_integration, code_quality
+from .routers import nodes, remote, routing, settings as settings_router, sitk, swarm, telemetry, orbstudio, screenshot, hardware, simpleswarm, swarm_coder, mesh, projects, mesh_remote, billing, notifications, stripe_integration, code_quality, cleanup
 from .settings_store import get_settings as _get_settings
 
 
@@ -128,18 +129,18 @@ async def lifespan(app: FastAPI):
                     peers = discover_nodes(timeout=3.0)
                     pool = get_remote_pool()
                     for peer in peers:
-                        nid = peer.get("node_id")
+                        nid = peer.id
                         if not nid or nid in pool.nodes:
                             continue
-                        endpoint = peer.get("endpoint", "")
+                        endpoint = f"http://{peer.ip}:8000" if peer.ip else ""
                         if not endpoint:
                             continue
                         pool.register(
                             node_id=nid,
                             base_url=endpoint,
-                            name=peer.get("name", nid),
-                            tier=peer.get("tier", "shadow"),
-                            vram_mb=peer.get("vram_mb", 0),
+                            name=peer.hostname or nid,
+                            tier=peer.role or "shadow",
+                            vram_mb=peer.metadata.get("vram_mb", 0),
                         )
                         print(f"[mesh] Auto-discovered peer: {nid} @ {endpoint}")
                 except Exception as e:
@@ -149,6 +150,28 @@ async def lifespan(app: FastAPI):
             print("[mesh] Discovery module not available, skipping auto-discovery")
 
     threading.Thread(target=_discovery_loop, daemon=True).start()
+
+    # ELI5: Like the night security guard who walks every floor every 30 minutes,
+    #       checking that every breaker panel's green LED is still on.
+    async def _health_loop():
+        while True:
+            try:
+                pool = get_remote_pool()
+                for nid, client in list(pool.nodes.items()):
+                    healthy = await asyncio.to_thread(client.health_check)
+                    status_label = "healthy" if healthy else "unreachable"
+                    print(f"[health] {nid} @ {client.base_url} — {status_label}")
+                    if tier_manager:
+                        await tier_manager.update_health(
+                            client.tier or "shadow",
+                            HealthStatus.HEALTHY if healthy else HealthStatus.OFFLINE,
+                            reason=f"health_check {'ok' if healthy else 'failed'} for {nid}",
+                        )
+            except Exception as e:
+                print(f"[health] Health-check loop error: {e}")
+            await asyncio.sleep(30)
+
+    asyncio.create_task(_health_loop())
 
     main_breaker = MainBreaker(
         tier_manager=tier_manager,
@@ -266,6 +289,7 @@ def create_app() -> FastAPI:
     app.include_router(notifications.router)
     app.include_router(stripe_integration.router)
     app.include_router(code_quality.router)
+    app.include_router(cleanup.router)
 
     # Serve the static dashboard (replaces broken Streamlit).
     static_dir = Path(__file__).parent.parent / "static"

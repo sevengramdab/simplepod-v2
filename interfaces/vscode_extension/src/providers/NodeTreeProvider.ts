@@ -13,7 +13,7 @@ export class NodeTreeItem extends vscode.TreeItem {
         const extra = models?.length > 2 ? ` +${models.length - 2}` : '';
         this.description = `${status} · ${latency}ms · ${modelList}${extra}`;
         this.tooltip = `${nodeId}\nStatus: ${status}\nLatency: ${latency}ms\nModels: ${models?.join(', ') || 'none'}`;
-        this.iconPath = new vscode.ThemeColor(status === 'healthy' ? 'charts.green' : 'charts.red');
+        this.iconPath = new vscode.ThemeIcon('circle-large-filled', new vscode.ThemeColor(status === 'healthy' ? 'charts.green' : 'charts.red'));
         this.contextValue = 'node';
     }
 }

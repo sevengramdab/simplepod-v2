@@ -61,6 +61,9 @@ export interface SettingsMap {
 
 export class SwarmClient {
     private baseUrl: string;
+    private _consecutiveFailures = 0;
+    private _circuitOpen = false;
+    private _circuitResetTimer: NodeJS.Timeout | null = null;
 
     constructor(baseUrl: string = 'http://localhost:8000') {
         this.baseUrl = baseUrl;
@@ -74,12 +77,54 @@ export class SwarmClient {
         return this.baseUrl;
     }
 
-    private async request(path: string, options?: RequestInit): Promise<any | null> {
+    private _openCircuit(): void {
+        this._circuitOpen = true;
+        console.warn(`[SwarmClient] Circuit breaker opened after ${this._consecutiveFailures} consecutive failures. Cooling down for 30s.`);
+        if (this._circuitResetTimer) {
+            clearTimeout(this._circuitResetTimer);
+        }
+        this._circuitResetTimer = setTimeout(() => {
+            this._circuitOpen = false;
+            this._consecutiveFailures = 0;
+            console.warn('[SwarmClient] Circuit breaker reset. Resuming requests.');
+        }, 30000);
+    }
+
+    async request(path: string, options?: RequestInit): Promise<any | null> {
+        if (this._circuitOpen) {
+            console.warn('[SwarmClient] Circuit breaker is OPEN — skipping request to', path);
+            return null;
+        }
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+
         try {
-            const res = await fetch(`${this.baseUrl}${path}`, { cache: 'no-store', ...options } as any);
-            if (!res.ok) { return null; }
+            const res = await fetch(`${this.baseUrl}${path}`, {
+                cache: 'no-store',
+                signal: controller.signal,
+                ...options,
+            } as any);
+            clearTimeout(timeoutId);
+
+            if (!res.ok) {
+                this._consecutiveFailures++;
+                console.error(`[SwarmClient] HTTP ${res.status} on ${path} (failure ${this._consecutiveFailures})`);
+                if (this._consecutiveFailures >= 5) {
+                    this._openCircuit();
+                }
+                return null;
+            }
+
+            this._consecutiveFailures = 0;
             return await res.json();
-        } catch {
+        } catch (err) {
+            clearTimeout(timeoutId);
+            this._consecutiveFailures++;
+            console.error(`[SwarmClient] Exception on ${path}:`, err, `(failure ${this._consecutiveFailures})`);
+            if (this._consecutiveFailures >= 5) {
+                this._openCircuit();
+            }
             return null;
         }
     }
@@ -236,5 +281,78 @@ export class SwarmClient {
 
     async remoteScreenshot(): Promise<{ success: boolean; image_base64: string; width: number; height: number } | null> {
         return this.get('/remote/screenshot');
+    }
+
+    async remoteStatus(nodeId?: string): Promise<any | null> {
+        return nodeId ? this.get(`/mesh/remote/${nodeId}/status`) : this.get('/remote/status');
+    }
+
+    async remoteLogs(nodeId?: string, lines: number = 50, logfile: string = 'backend'): Promise<any | null> {
+        return nodeId
+            ? this.get(`/mesh/remote/${nodeId}/logs?lines=${lines}&logfile=${logfile}`)
+            : this.get(`/remote/logs?lines=${lines}&logfile=${logfile}`);
+    }
+
+    async remoteProcesses(nodeId?: string, filter?: string): Promise<any | null> {
+        const q = filter ? `?filter=${filter}` : '';
+        return nodeId ? this.get(`/mesh/remote/${nodeId}/processes${q}`) : this.get(`/remote/processes${q}`);
+    }
+
+    async remoteInject(prompt: string, model?: string, mode?: string, nodeId?: string): Promise<any | null> {
+        const body = { prompt, model, mode: mode ?? 'agent' };
+        return nodeId
+            ? this.post(`/mesh/remote/${nodeId}/inject`, body)
+            : this.post('/remote/inject', body);
+    }
+
+    async getTransfers(): Promise<any[] | null> {
+        return this.get('/transfers');
+    }
+
+    // -----------------------------------------------------------------------
+    // Cleanup tools
+    // ELI5: Like the building maintenance team's work orders.
+    //       They audit every floor, find the overloaded circuits,
+    //       and only flip breakers after the safety check.
+    // -----------------------------------------------------------------------
+    async cleanupAnalyze(drive: string = 'C:/'): Promise<any | null> {
+        return this.post('/tools/cleanup/analyze', { drive });
+    }
+
+    async cleanupGames(drive: string = 'C:/'): Promise<any | null> {
+        return this.post('/tools/cleanup/games', { drive });
+    }
+
+    async cleanupLargeFiles(drive: string = 'C:/', minSizeMb: number = 100, maxFiles: number = 200): Promise<any | null> {
+        return this.post('/tools/cleanup/large-files', { drive, min_size_mb: minSizeMb, max_files: maxFiles });
+    }
+
+    async cleanupSafety(drive: string = 'C:/'): Promise<any | null> {
+        return this.post('/tools/cleanup/safety', { drive });
+    }
+
+    async cleanupExecute(targets: { path: string; force?: boolean }[]): Promise<any | null> {
+        return this.post('/tools/cleanup/execute', { targets });
+    }
+
+    // Mesh-forwarded cleanup (remote node)
+    async meshCleanupAnalyze(nodeId: string, drive: string = 'C:/'): Promise<any | null> {
+        return this.post(`/mesh/remote/${nodeId}/cleanup/analyze`, { drive });
+    }
+
+    async meshCleanupGames(nodeId: string, drive: string = 'C:/'): Promise<any | null> {
+        return this.post(`/mesh/remote/${nodeId}/cleanup/games`, { drive });
+    }
+
+    async meshCleanupLargeFiles(nodeId: string, drive: string = 'C:/', minSizeMb: number = 100, maxFiles: number = 200): Promise<any | null> {
+        return this.post(`/mesh/remote/${nodeId}/cleanup/large-files`, { drive, min_size_mb: minSizeMb, max_files: maxFiles });
+    }
+
+    async meshCleanupSafety(nodeId: string, drive: string = 'C:/'): Promise<any | null> {
+        return this.post(`/mesh/remote/${nodeId}/cleanup/safety`, { drive });
+    }
+
+    async meshCleanupExecute(nodeId: string, targets: { path: string; force?: boolean }[]): Promise<any | null> {
+        return this.post(`/mesh/remote/${nodeId}/cleanup/execute`, { targets });
     }
 }

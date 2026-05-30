@@ -9,7 +9,7 @@ Run on shadow PC:
 
 Env overrides:
     SIMPOD_NODE_ID=shadow_pc
-    SIMPOD_PORT=8000
+    SIMPOD_PORT=8002
     SIMPOD_OLLAMA_URL=http://localhost:11434
 """
 import sys
@@ -17,6 +17,13 @@ import os
 import json
 import subprocess
 import socket
+import logging
+
+logging.basicConfig(
+    filename="logs/shadow_node.log",
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_ROOT not in sys.path:
@@ -97,7 +104,7 @@ def _fetch_ollama_models(ollama_url: str):
 # Config
 # ---------------------------------------------------------------------------
 NODE_ID = os.environ.get("SIMPOD_NODE_ID", "shadow_pc")
-PORT = int(os.environ.get("SIMPOD_PORT", "8000"))
+PORT = int(os.environ.get("SIMPOD_PORT", "8002"))
 OLLAMA_URL = os.environ.get("SIMPOD_OLLAMA_URL", "http://localhost:11434")
 GPU_NAME, VRAM_MB = _detect_gpu()
 MODELS = _fetch_ollama_models(OLLAMA_URL)
@@ -119,6 +126,13 @@ try:
     app.include_router(remote_router)
 except Exception as e:
     print(f"[WARN] Remote control router not loaded: {e}")
+
+# Cleanup tool router
+try:
+    from interfaces.web_ui.backend.routers.cleanup import router as cleanup_router
+    app.include_router(cleanup_router)
+except Exception as e:
+    print(f"[WARN] Cleanup router not loaded: {e}")
 
 # SwarmCoder router (optional — only if deps available)
 _shadow_coder = None
@@ -223,4 +237,5 @@ if __name__ == "__main__":
     print(f"  Workspace: {SHADOW_WORKSPACE}")
     print(f"  Port:      {PORT}")
     print("=" * 60)
+    logging.info(f"Shadow node starting on port {PORT}")
     uvicorn.run(app, host="0.0.0.0", port=PORT)

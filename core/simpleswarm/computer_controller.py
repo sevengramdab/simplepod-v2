@@ -205,7 +205,6 @@ class ComputerController:
             self._log("screenshot", f"{w}x{h}")
             return {
                 "success": True,
-                "image": img,
                 "image_base64": b64,
                 "width": w,
                 "height": h,
