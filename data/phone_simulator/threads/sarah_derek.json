@@ -1,0 +1,278 @@
+{
+  "thread_id": "sarah_derek",
+  "participants": [
+    "Derek",
+    "Sarah"
+  ],
+  "message_count": 38,
+  "first_message": "2026-03-02T21:00:00",
+  "last_message": "2026-03-14T00:00:00",
+  "messages": [
+    {
+      "message_id": "msg_852787",
+      "sender": "Derek",
+      "text": "Where are you",
+      "timestamp": "2026-03-02T21:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_429963",
+      "sender": "Sarah",
+      "text": "Still at work. The quarterly report\u2014",
+      "timestamp": "2026-03-02T21:06:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_322955",
+      "sender": "Derek",
+      "text": "It's 9pm. Again.",
+      "timestamp": "2026-03-02T21:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_787277",
+      "sender": "Sarah",
+      "text": "I know. I'm sorry. I'll pick up Thai on the way home.",
+      "timestamp": "2026-03-02T21:24:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_623481",
+      "sender": "Derek",
+      "text": "You know I can't eat Thai. The spices mess with my meds.",
+      "timestamp": "2026-03-02T21:36:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_514850",
+      "sender": "Sarah",
+      "text": "Right. Subway then?",
+      "timestamp": "2026-03-02T21:48:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_774079",
+      "sender": "Derek",
+      "text": "Just come home. I need help with the catheter bag.",
+      "timestamp": "2026-03-02T22:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_581141",
+      "sender": "Sarah",
+      "text": "...",
+      "timestamp": "2026-03-02T22:12:00",
+      "read": false
+    },
+    {
+      "message_id": "msg_249811",
+      "sender": "Derek",
+      "text": "You forgot my physical therapy appointment",
+      "timestamp": "2026-03-06T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_377746",
+      "sender": "Sarah",
+      "text": "I didn't forget. I had the client presentation. I rescheduled it for Thursday.",
+      "timestamp": "2026-03-06T13:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_246413",
+      "sender": "Derek",
+      "text": "You didn't ASK me. You just decided. Like you decide everything now.",
+      "timestamp": "2026-03-06T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_358607",
+      "sender": "Sarah",
+      "text": "Derek I'm trying to keep us afloat. Your disability check is late and my bonus is covering the mortgage.",
+      "timestamp": "2026-03-06T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_881177",
+      "sender": "Derek",
+      "text": "Oh so now I'm a BURDEN. Great. Thanks for the reminder.",
+      "timestamp": "2026-03-06T14:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_688637",
+      "sender": "Sarah",
+      "text": "That's not what I said.",
+      "timestamp": "2026-03-06T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_665158",
+      "sender": "Derek",
+      "text": "It's what you MEANT. Go back to work. I'll figure it out myself. Like I always do.",
+      "timestamp": "2026-03-06T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_375504",
+      "sender": "Sarah",
+      "text": "You want me to come home?",
+      "timestamp": "2026-03-06T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_883300",
+      "sender": "Derek",
+      "text": "Do whatever you want. You always do.",
+      "timestamp": "2026-03-06T18:00:00",
+      "read": false
+    },
+    {
+      "message_id": "msg_712982",
+      "sender": "Derek",
+      "text": "Your mother called. She thinks we should get married.",
+      "timestamp": "2026-03-10T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_549245",
+      "sender": "Sarah",
+      "text": "She mentioned it. I told her we're not there yet.",
+      "timestamp": "2026-03-10T17:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_711878",
+      "sender": "Derek",
+      "text": "Not there yet? It's been THREE YEARS. What's the holdup, Sarah? Is it the chair? Is it because I can't walk down an aisle?",
+      "timestamp": "2026-03-10T17:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_518801",
+      "sender": "Sarah",
+      "text": "It's because we're not happy, Derek. When did we stop being happy?",
+      "timestamp": "2026-03-10T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_479580",
+      "sender": "Derek",
+      "text": "When I stopped being USEFUL, apparently. When I became the guy you push around in public and ignore in private.",
+      "timestamp": "2026-03-10T18:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_329974",
+      "sender": "Sarah",
+      "text": "I don't ignore you. I take care of you every single day.",
+      "timestamp": "2026-03-10T19:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_245051",
+      "sender": "Derek",
+      "text": "Taking care isn't the same as loving. Even I know that.",
+      "timestamp": "2026-03-10T20:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_634277",
+      "sender": "Sarah",
+      "text": "...",
+      "timestamp": "2026-03-10T21:00:00",
+      "read": false
+    },
+    {
+      "message_id": "msg_617488",
+      "sender": "Derek",
+      "text": "I found the note. In your coat pocket.",
+      "timestamp": "2026-03-13T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_195325",
+      "sender": "Sarah",
+      "text": "What note?",
+      "timestamp": "2026-03-13T15:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_892495",
+      "sender": "Derek",
+      "text": "'You're allowed to be happy.' Nice handwriting. Is that his? Did he WRITE you a LOVE NOTE?",
+      "timestamp": "2026-03-13T15:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_149405",
+      "sender": "Sarah",
+      "text": "It's not a love note. It's... encouragement.",
+      "timestamp": "2026-03-13T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_214975",
+      "sender": "Derek",
+      "text": "Encouragement to do WHAT? Leave me? Cheat on me? FUCK some guy who can still feel his legs?",
+      "timestamp": "2026-03-13T16:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_260265",
+      "sender": "Sarah",
+      "text": "Derek please. You're hurting yourself.",
+      "timestamp": "2026-03-13T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_757924",
+      "sender": "Derek",
+      "text": "I'm ALREADY hurt! Every day! And you used to care! Now you smell like HIS cologne and smile at your PHONE like I don't EXIST.",
+      "timestamp": "2026-03-13T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_267753",
+      "sender": "Sarah",
+      "text": "I'm going to stay at Jessica's tonight.",
+      "timestamp": "2026-03-13T19:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_930555",
+      "sender": "Derek",
+      "text": "Of course you are. Run to your little friend. Tell her how MEAN the cripple is.",
+      "timestamp": "2026-03-13T20:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_813536",
+      "sender": "Sarah",
+      "text": "Don't call yourself that.",
+      "timestamp": "2026-03-13T21:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_542666",
+      "sender": "Derek",
+      "text": "Why not? It's what you see. It's what HE sees. A broken man who can't even keep his girlfriend from wandering.",
+      "timestamp": "2026-03-13T22:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_725380",
+      "sender": "Sarah",
+      "text": "Goodnight, Derek.",
+      "timestamp": "2026-03-13T23:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_166613",
+      "sender": "Derek",
+      "text": "You'll be back. You need me. Nobody else wants damaged goods.",
+      "timestamp": "2026-03-14T00:00:00",
+      "read": false
+    }
+  ]
+}

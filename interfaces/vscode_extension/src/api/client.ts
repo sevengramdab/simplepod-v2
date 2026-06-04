@@ -355,4 +355,72 @@ export class SwarmClient {
     async meshCleanupExecute(nodeId: string, targets: { path: string; force?: boolean }[]): Promise<any | null> {
         return this.post(`/mesh/remote/${nodeId}/cleanup/execute`, { targets });
     }
+
+    // -----------------------------------------------------------------------
+    // SimplePod Unified Pipeline
+    // ELI5: The new smart-home automation wing of the building.
+    //       Control the 20-node swarm, submit goals, and check status.
+    // -----------------------------------------------------------------------
+    async unifiedStart(): Promise<any | null> {
+        return this.post('/unified/pipeline/start');
+    }
+
+    async unifiedStop(): Promise<any | null> {
+        return this.post('/unified/pipeline/stop');
+    }
+
+    async unifiedStatus(): Promise<any | null> {
+        return this.get('/unified/pipeline/status');
+    }
+
+    async unifiedGoal(goal: string): Promise<any | null> {
+        return this.post('/unified/goal', { goal });
+    }
+
+    async unifiedWorkers(): Promise<any | null> {
+        return this.get('/unified/workers');
+    }
+
+    async unifiedSelfHeal(targetPath: string = '.'): Promise<any | null> {
+        return this.post('/unified/selfheal/run', { target_path: targetPath });
+    }
+
+    async unifiedVisionAnalyze(): Promise<any | null> {
+        return this.post('/unified/vision/analyze');
+    }
+
+    async unifiedOSClick(x: number, y: number, button: string = 'left'): Promise<any | null> {
+        return this.post('/unified/os/click', { x, y, button });
+    }
+
+    async unifiedOSType(text: string): Promise<any | null> {
+        return this.post('/unified/os/type', { text });
+    }
+
+    // -----------------------------------------------------------------------
+    // Demo / Test Endpoints (No LLM Required)
+    // -----------------------------------------------------------------------
+    async demoPhoneContacts(): Promise<any | null> {
+        return this.get('/unified/demo/phone/contacts');
+    }
+
+    async demoPhoneThreads(): Promise<any | null> {
+        return this.get('/unified/demo/phone/threads');
+    }
+
+    async demoPhoneThread(threadId: string): Promise<any | null> {
+        return this.get(`/unified/demo/phone/thread/${threadId}`);
+    }
+
+    async demoPhoneAnalyze(): Promise<any | null> {
+        return this.get('/unified/demo/phone/analyze');
+    }
+
+    async demoLLMTest(prompt: string): Promise<any | null> {
+        return this.post('/unified/demo/llm-test', { prompt, use_fallback: true });
+    }
+
+    async orbitscribeAnalyze(mode: string = 'synthetic'): Promise<any | null> {
+        return this.get(`/unified/demo/orbitscribe/analyze?mode=${mode}`);
+    }
 }

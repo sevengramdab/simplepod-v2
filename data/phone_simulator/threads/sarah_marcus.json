@@ -1,0 +1,741 @@
+{
+  "thread_id": "sarah_marcus",
+  "participants": [
+    "Derek",
+    "Marcus",
+    "Sarah"
+  ],
+  "message_count": 99,
+  "first_message": "2026-03-02T09:00:00",
+  "last_message": "2026-03-19T17:00:00",
+  "messages": [
+    {
+      "message_id": "msg_770487",
+      "sender": "Sarah",
+      "text": "Hey! You left your charger in conference room B",
+      "timestamp": "2026-03-02T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_216739",
+      "sender": "Marcus",
+      "text": "Oh thanks! I was wondering where that went \ud83d\ude05",
+      "timestamp": "2026-03-02T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_126225",
+      "sender": "Sarah",
+      "text": "No worries. Your deck for the quarterly review looked really good btw",
+      "timestamp": "2026-03-02T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_877572",
+      "sender": "Marcus",
+      "text": "Really? I was up until 2am redoing the user-flow diagrams",
+      "timestamp": "2026-03-02T11:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_388389",
+      "sender": "Sarah",
+      "text": "It shows. The stakeholder journey map is *chef's kiss*",
+      "timestamp": "2026-03-02T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_356787",
+      "sender": "Marcus",
+      "text": "Haha coming from you that means a lot. You're basically the reason I didn't quit last quarter lol",
+      "timestamp": "2026-03-02T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_334053",
+      "sender": "Sarah",
+      "text": "Shut uppp \ud83d\ude02 I'm serious though",
+      "timestamp": "2026-03-02T12:12:00",
+      "read": true,
+      "reactions": [
+        {
+          "emoji": "\ud83d\ude02",
+          "user": "Marcus",
+          "timestamp": "2026-03-02T12:18:00"
+        }
+      ]
+    },
+    {
+      "message_id": "msg_246316",
+      "sender": "Marcus",
+      "text": "You still here? It's 8:30",
+      "timestamp": "2026-03-04T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_872246",
+      "sender": "Sarah",
+      "text": "Derek's asleep by now anyway. Might as well finish the copy deck",
+      "timestamp": "2026-03-04T09:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_207473",
+      "sender": "Marcus",
+      "text": "...everything okay at home?",
+      "timestamp": "2026-03-04T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_809570",
+      "sender": "Sarah",
+      "text": "Yeah yeah. Just... you know how it is",
+      "timestamp": "2026-03-04T09:48:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_876646",
+      "sender": "Marcus",
+      "text": "I don't, actually. But I have beer in the mini fridge if you want to vent",
+      "timestamp": "2026-03-04T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_671858",
+      "sender": "Sarah",
+      "text": "You're going to get me fired \ud83d\ude02",
+      "timestamp": "2026-03-04T10:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_191161",
+      "sender": "Marcus",
+      "text": "HR left at 5. We're safe.",
+      "timestamp": "2026-03-04T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_719176",
+      "sender": "Sarah",
+      "text": "...one beer.",
+      "timestamp": "2026-03-04T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_542417",
+      "sender": "Sarah",
+      "text": "Thanks for listening last night. I don't really have anyone to talk to about... all that",
+      "timestamp": "2026-03-06T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_133326",
+      "sender": "Marcus",
+      "text": "Anytime. I meant what I said \u2014 you deserve someone who sees how hard you work",
+      "timestamp": "2026-03-06T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_131244",
+      "sender": "Sarah",
+      "text": "Derek used to be like that. Before the accident. Now it's like I'm walking on eggshells AND paying all the bills",
+      "timestamp": "2026-03-06T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_198246",
+      "sender": "Marcus",
+      "text": "That's not a relationship, Sarah. That's a caretaking arrangement.",
+      "timestamp": "2026-03-06T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_329258",
+      "sender": "Sarah",
+      "text": "I know. I KNOW. But I can't just... leave him. He's disabled because of ME.",
+      "timestamp": "2026-03-06T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_343962",
+      "sender": "Marcus",
+      "text": "Wait what? I thought it was a motorcycle accident?",
+      "timestamp": "2026-03-06T11:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_629903",
+      "sender": "Sarah",
+      "text": "It was. We were fighting. He left angry. I didn't stop him.",
+      "timestamp": "2026-03-06T11:48:00",
+      "read": true,
+      "reactions": [
+        {
+          "emoji": "\ud83d\udc94",
+          "user": "Marcus",
+          "timestamp": "2026-03-06T12:00:00"
+        }
+      ]
+    },
+    {
+      "message_id": "msg_731262",
+      "sender": "Marcus",
+      "text": "Sarah. That's not your fault.",
+      "timestamp": "2026-03-06T12:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_127824",
+      "sender": "Sarah",
+      "text": "I wish I believed that",
+      "timestamp": "2026-03-06T13:00:00",
+      "read": true,
+      "deleted": true,
+      "deleted_at": "2026-03-06T13:06:00"
+    },
+    {
+      "message_id": "msg_688508",
+      "sender": "Sarah",
+      "text": "Anyway. New topic. Did you see Amanda's email about the offsite?",
+      "timestamp": "2026-03-06T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_308496",
+      "sender": "Marcus",
+      "text": "Yeah. I was thinking... maybe we could share a car?",
+      "timestamp": "2026-03-06T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_850800",
+      "sender": "Marcus",
+      "text": "Your room is 412? I'm 414. This hotel has no idea what they've done \ud83d\ude02",
+      "timestamp": "2026-03-09T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_781453",
+      "sender": "Sarah",
+      "text": "MARCUS. Behave.",
+      "timestamp": "2026-03-09T09:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_835392",
+      "sender": "Marcus",
+      "text": "I'm behaving! I'm VERY well behaved. Ask my therapist.",
+      "timestamp": "2026-03-09T09:24:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_671412",
+      "sender": "Sarah",
+      "text": "You have a therapist?",
+      "timestamp": "2026-03-09T09:36:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_539898",
+      "sender": "Marcus",
+      "text": "Had. After the divorce. She said I have a 'savior complex and boundary issues.' Sounds about right.",
+      "timestamp": "2026-03-09T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_331148",
+      "sender": "Sarah",
+      "text": "...do I need saving, Marcus?",
+      "timestamp": "2026-03-09T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_571029",
+      "sender": "Marcus",
+      "text": "You need someone who doesn't make you feel small. That's not saving. That's baseline.",
+      "timestamp": "2026-03-09T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_717889",
+      "sender": "Sarah",
+      "text": "Why are you being so nice to me?",
+      "timestamp": "2026-03-09T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_391704",
+      "sender": "Marcus",
+      "text": "Because when you laugh at my bad jokes, the whole room gets brighter. And I think you've forgotten that's possible.",
+      "timestamp": "2026-03-09T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_948749",
+      "sender": "Sarah",
+      "text": "...",
+      "timestamp": "2026-03-09T13:30:00",
+      "read": true,
+      "reactions": [
+        {
+          "emoji": "\u2764\ufe0f",
+          "user": "Marcus",
+          "timestamp": "2026-03-09T13:42:00"
+        }
+      ]
+    },
+    {
+      "message_id": "msg_106814",
+      "sender": "Marcus",
+      "text": "Shit. I'm sorry. That was too much. Forget I said that.",
+      "timestamp": "2026-03-09T14:00:00",
+      "read": true,
+      "edited": true,
+      "original_text": "Shit. I'm sorry. That was too much. Forget I said that. I know you're with Derek.",
+      "edited_at": "2026-03-09T14:06:00"
+    },
+    {
+      "message_id": "msg_895667",
+      "sender": "Sarah",
+      "text": "I didn't forget.",
+      "timestamp": "2026-03-09T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_944962",
+      "sender": "Sarah",
+      "text": "I told Jessica about the offsite",
+      "timestamp": "2026-03-11T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_267414",
+      "sender": "Marcus",
+      "text": "And?",
+      "timestamp": "2026-03-11T09:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_832052",
+      "sender": "Sarah",
+      "text": "She said I need to break up with Derek BEFORE anything happens with you. If anything happens.",
+      "timestamp": "2026-03-11T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_543143",
+      "sender": "Marcus",
+      "text": "She's not wrong",
+      "timestamp": "2026-03-11T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_456778",
+      "sender": "Sarah",
+      "text": "I know. But Derek can't work. He can't drive. His mom blames me already. If I leave... what happens to him?",
+      "timestamp": "2026-03-11T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_391369",
+      "sender": "Marcus",
+      "text": "What happens to YOU if you stay?",
+      "timestamp": "2026-03-11T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_263032",
+      "sender": "Sarah",
+      "text": "I hate that you ask the hard questions.",
+      "timestamp": "2026-03-11T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_325772",
+      "sender": "Marcus",
+      "text": "I hate that nobody else is asking them.",
+      "timestamp": "2026-03-11T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_900581",
+      "sender": "Sarah",
+      "text": "I need time. Please. Don't... don't stop being my friend.",
+      "timestamp": "2026-03-11T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_452944",
+      "sender": "Marcus",
+      "text": "I'm not going anywhere. But I'm also not going to pretend I don't feel this.",
+      "timestamp": "2026-03-11T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_207175",
+      "sender": "Derek",
+      "text": "Who's Marcus?",
+      "timestamp": "2026-03-13T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_197251",
+      "sender": "Sarah",
+      "text": "My coworker? Why?",
+      "timestamp": "2026-03-13T09:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_498382",
+      "sender": "Derek",
+      "text": "Your phone lit up at 11pm. 'Marcus: I'm not going anywhere.' Real cute.",
+      "timestamp": "2026-03-13T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_201414",
+      "sender": "Sarah",
+      "text": "We were talking about the product launch. He's on my team.",
+      "timestamp": "2026-03-13T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_476417",
+      "sender": "Derek",
+      "text": "You smell different. New perfume?",
+      "timestamp": "2026-03-13T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_988662",
+      "sender": "Sarah",
+      "text": "It's the sample from Sephora I told you about.",
+      "timestamp": "2026-03-13T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_460663",
+      "sender": "Derek",
+      "text": "You used to tell me everything. Now I find out about perfume samples from your MOTHER.",
+      "timestamp": "2026-03-13T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_733052",
+      "sender": "Sarah",
+      "text": "Derek, please. I'm exhausted. Can we not do this tonight?",
+      "timestamp": "2026-03-13T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_377370",
+      "sender": "Derek",
+      "text": "Fine. Go sleep. You look like you need it. Must be hard, all that... teamwork.",
+      "timestamp": "2026-03-13T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_946335",
+      "sender": "Sarah",
+      "text": "...",
+      "timestamp": "2026-03-13T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_145561",
+      "sender": "Sarah",
+      "text": "Derek went through my laptop while I was showering",
+      "timestamp": "2026-03-15T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_865179",
+      "sender": "Marcus",
+      "text": "What?? Did he find anything?",
+      "timestamp": "2026-03-15T09:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_581741",
+      "sender": "Sarah",
+      "text": "Our Slack DMs auto-delete but he saw my calendar. 'Dinner with Marcus 8pm' from March 14th.",
+      "timestamp": "2026-03-15T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_662275",
+      "sender": "Marcus",
+      "text": "That was the team dinner! Six people were there!",
+      "timestamp": "2026-03-15T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_230889",
+      "sender": "Sarah",
+      "text": "I know. He doesn't care. He said 'where there's smoke there's fire' and threw his plate at the wall.",
+      "timestamp": "2026-03-15T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_496922",
+      "sender": "Marcus",
+      "text": "Sarah this is abuse. You know that right?",
+      "timestamp": "2026-03-15T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_182627",
+      "sender": "Sarah",
+      "text": "He's in pain. The neuropathy is worse this month. His meds got denied again.",
+      "timestamp": "2026-03-15T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_678856",
+      "sender": "Marcus",
+      "text": "That doesn't give him the right to terrorize you.",
+      "timestamp": "2026-03-15T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_407419",
+      "sender": "Sarah",
+      "text": "He said if I leave he'll tell everyone I caused the accident. He'll post it. He has pictures of the crash scene.",
+      "timestamp": "2026-03-15T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_969693",
+      "sender": "Marcus",
+      "text": "...",
+      "timestamp": "2026-03-15T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_759176",
+      "sender": "Marcus",
+      "text": "I'm coming over. I'm getting an Uber right now.",
+      "timestamp": "2026-03-15T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_748564",
+      "sender": "Sarah",
+      "text": "NO. Marcus no. If he sees you...",
+      "timestamp": "2026-03-15T14:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_479201",
+      "sender": "Marcus",
+      "text": "Then let him see me. I'm done hiding.",
+      "timestamp": "2026-03-15T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_705397",
+      "sender": "Sarah",
+      "text": "I wish you were here right now",
+      "timestamp": "2026-03-15T15:30:00",
+      "read": true,
+      "deleted": true,
+      "deleted_at": "2026-03-15T15:36:00"
+    },
+    {
+      "message_id": "msg_301629",
+      "sender": "Sarah",
+      "text": "Please don't. I'll handle it. I always handle it.",
+      "timestamp": "2026-03-15T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_838797",
+      "sender": "Marcus",
+      "text": "I'm in the parking garage. Level P2. Please.",
+      "timestamp": "2026-03-17T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_172933",
+      "sender": "Sarah",
+      "text": "I can't leave. He's watching the Ring camera.",
+      "timestamp": "2026-03-17T09:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_148050",
+      "sender": "Marcus",
+      "text": "Then open the window. I just need to see that you're okay.",
+      "timestamp": "2026-03-17T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_793384",
+      "sender": "Sarah",
+      "text": "I'm not okay. I've been crying for three hours and pretending I'm fine.",
+      "timestamp": "2026-03-17T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_338968",
+      "sender": "Marcus",
+      "text": "Sarah. I love you. I know it's the wrong time and the wrong way but I need you to hear it from someone who means it.",
+      "timestamp": "2026-03-17T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_910620",
+      "sender": "Sarah",
+      "text": "Don't say that. Don't make this harder.",
+      "timestamp": "2026-03-17T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_403445",
+      "sender": "Marcus",
+      "text": "I watched you eat vending machine crackers for dinner because you gave Derek your whole paycheck for his new wheelchair cushion. I watched you laugh at his cruel jokes just to keep the peace. I watched you shrink.",
+      "timestamp": "2026-03-17T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_183667",
+      "sender": "Sarah",
+      "text": "I don't know how to be big again.",
+      "timestamp": "2026-03-17T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_996865",
+      "sender": "Marcus",
+      "text": "One step at a time. Step one: look out your window.",
+      "timestamp": "2026-03-17T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_344098",
+      "sender": "Sarah",
+      "text": "...you're holding a sign.",
+      "timestamp": "2026-03-17T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_205907",
+      "sender": "Marcus",
+      "text": "It says 'You're allowed to be happy.' Did I spell it right?",
+      "timestamp": "2026-03-17T16:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_498591",
+      "sender": "Sarah",
+      "text": "You're an idiot.",
+      "timestamp": "2026-03-17T17:00:00",
+      "read": true,
+      "reactions": [
+        {
+          "emoji": "\ud83d\ude2d",
+          "user": "Marcus",
+          "timestamp": "2026-03-17T17:12:00"
+        }
+      ]
+    },
+    {
+      "message_id": "msg_391476",
+      "sender": "Marcus",
+      "text": "Your idiot. If you want me.",
+      "timestamp": "2026-03-17T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_575435",
+      "sender": "Derek",
+      "text": "I saw him.",
+      "timestamp": "2026-03-19T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_766563",
+      "sender": "Sarah",
+      "text": "Derek it's not\u2014",
+      "timestamp": "2026-03-19T09:06:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_974628",
+      "sender": "Derek",
+      "text": "I saw the sign. I saw you at the window. I have VIDEO, Sarah.",
+      "timestamp": "2026-03-19T09:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_482554",
+      "sender": "Sarah",
+      "text": "He's my friend. He was checking on me.",
+      "timestamp": "2026-03-19T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_270555",
+      "sender": "Derek",
+      "text": "FRIENDS don't hold up LOVE SIGNS at 1am. FRIENDS don't make my girlfriend CRY TEARS OF JOY.",
+      "timestamp": "2026-03-19T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_488162",
+      "sender": "Sarah",
+      "text": "What do you want me to say?",
+      "timestamp": "2026-03-19T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_472528",
+      "sender": "Derek",
+      "text": "Say you'll block him. Say you'll quit your job. Say you'll stay home and take care of me like you PROMISED.",
+      "timestamp": "2026-03-19T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_319684",
+      "sender": "Sarah",
+      "text": "I never promised to be your prisoner.",
+      "timestamp": "2026-03-19T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_802729",
+      "sender": "Derek",
+      "text": "So that's it? Three years and you're leaving me for some desk jockey with a dog?",
+      "timestamp": "2026-03-19T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_379946",
+      "sender": "Sarah",
+      "text": "I'm not leaving you FOR him. I'm leaving you because I can't breathe anymore.",
+      "timestamp": "2026-03-19T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_835911",
+      "sender": "Derek",
+      "text": "You'll regret this. I'll make sure everyone knows what you did. Your mom. Your boss. Instagram. EVERYONE.",
+      "timestamp": "2026-03-19T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_816751",
+      "sender": "Sarah",
+      "text": "...do what you need to do, Derek. I'm done being afraid.",
+      "timestamp": "2026-03-19T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_779514",
+      "sender": "Derek",
+      "text": "You'll come back. They always come back. When he's bored of you and you're broken and alone. You'll come crawling back.",
+      "timestamp": "2026-03-19T17:00:00",
+      "read": false
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "calls": [
+    {
+      "contact": "Marcus Chen",
+      "number": "+1-555-0142",
+      "direction": "outgoing",
+      "duration_sec": 1847,
+      "timestamp": "2026-03-04T13:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 45,
+      "timestamp": "2026-03-06T13:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 12,
+      "timestamp": "2026-03-09T09:00:00",
+      "status": "missed"
+    },
+    {
+      "contact": "Jessica Morales",
+      "number": "+1-555-0177",
+      "direction": "outgoing",
+      "duration_sec": 3204,
+      "timestamp": "2026-03-09T16:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Marcus Chen",
+      "number": "+1-555-0142",
+      "direction": "outgoing",
+      "duration_sec": 94,
+      "timestamp": "2026-03-12T09:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 0,
+      "timestamp": "2026-03-13T09:00:00",
+      "status": "missed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 0,
+      "timestamp": "2026-03-13T09:06:00",
+      "status": "missed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 0,
+      "timestamp": "2026-03-13T09:12:00",
+      "status": "missed"
+    },
+    {
+      "contact": "Marcus Chen",
+      "number": "+1-555-0142",
+      "direction": "outgoing",
+      "duration_sec": 4521,
+      "timestamp": "2026-03-17T09:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Jessica Morales",
+      "number": "+1-555-0177",
+      "direction": "outgoing",
+      "duration_sec": 1800,
+      "timestamp": "2026-03-19T01:00:00",
+      "status": "completed"
+    },
+    {
+      "contact": "Derek Holloway",
+      "number": "+1-555-0199",
+      "direction": "incoming",
+      "duration_sec": 0,
+      "timestamp": "2026-03-19T09:00:00",
+      "status": "rejected"
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import {
   Terminal,
   ArrowRight,
   Wrench,
+  BrainCircuit,
 } from 'lucide-react'
 
 interface ToolDef {
@@ -99,6 +100,25 @@ const tools: ToolDef[] = [
     ],
   },
   {
+    id: 'orbitscribe',
+    displayName: 'OrbitScribe — LLM Relationship Reasoning Engine',
+    shortName: 'OrbitScribe',
+    description: 'Analyzes phone extractions for attachment styles, triangulation, emotional trajectories, and relationship graphs using LLM chain-of-thought reasoning.',
+    longDescription:
+      'Forensic relationship analysis powered by LLM reasoning. Detects attachment styles (secure, anxious, avoidant, disorganized), identifies triangulation events where third parties are manipulated, maps emotional trajectories over time, and builds a full relationship graph with risk scoring. Runs in instant synthetic demo mode or full LLM inference mode.',
+    category: 'analysis',
+    files: 1,
+    icon: BrainCircuit,
+    cliExample: 'curl http://localhost:8000/unified/demo/orbitscribe/analyze?mode=synthetic',
+    features: [
+      'Attachment style detection with evidence quotes',
+      'Triangulation event identification with manipulative scoring',
+      'Emotional trajectory mapping with inflection points',
+      'Relationship graph with centrality and risk analysis',
+      '3-mode operation: instant synthetic, auto fallback, or full LLM',
+    ],
+  },
+  {
     id: 'synthpod',
     displayName: 'SynthPod — Multi-Model Response Synthesizer',
     shortName: 'SynthPod',
@@ -125,6 +145,7 @@ const categoryColors: Record<ToolDef['category'], string> = {
   benchmark: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
   documentation: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
   synthesis: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
+  analysis: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300',
 }
 
 const categoryLabels: Record<ToolDef['category'], string> = {
@@ -133,6 +154,7 @@ const categoryLabels: Record<ToolDef['category'], string> = {
   benchmark: 'Benchmarking',
   documentation: 'Documentation',
   synthesis: 'Model Synthesis',
+  analysis: 'Relationship Analysis',
 }
 
 export function Tools() {

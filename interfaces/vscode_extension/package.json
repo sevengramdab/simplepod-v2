@@ -210,6 +210,54 @@
         "title": "Mesh Cleanup: Find Remote Large Files",
         "category": "SimplePod Mesh",
         "icon": "$(search)"
+      },
+      {
+        "command": "simplepod.unifiedStart",
+        "title": "Unified: Start Pipeline",
+        "category": "SimplePod Unified",
+        "icon": "$(play-circle)"
+      },
+      {
+        "command": "simplepod.unifiedStop",
+        "title": "Unified: Stop Pipeline",
+        "category": "SimplePod Unified",
+        "icon": "$(stop-circle)"
+      },
+      {
+        "command": "simplepod.unifiedStatus",
+        "title": "Unified: Show Status",
+        "category": "SimplePod Unified",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "simplepod.unifiedGoal",
+        "title": "Unified: Submit Goal",
+        "category": "SimplePod Unified",
+        "icon": "$(target)"
+      },
+      {
+        "command": "simplepod.unifiedSelfHeal",
+        "title": "Unified: Self-Heal Directory",
+        "category": "SimplePod Unified",
+        "icon": "$(wrench)"
+      },
+      {
+        "command": "simplepod.demoPhoneAnalyze",
+        "title": "Demo: Analyze Phone Extraction",
+        "category": "SimplePod Demo",
+        "icon": "$(device-mobile)"
+      },
+      {
+        "command": "simplepod.demoLLMTest",
+        "title": "Demo: Test Free LLM Fallback",
+        "category": "SimplePod Demo",
+        "icon": "$(comment)"
+      },
+      {
+        "command": "simplepod.orbitscribeAnalyze",
+        "title": "OrbitScribe: Relationship Analysis",
+        "category": "SimplePod Demo",
+        "icon": "$(graph)"
       }
     ],
     "keybindings": [
@@ -278,7 +326,15 @@
         { "command": "simplepod.cleanupExecute" },
         { "command": "simplepod.meshCleanupAnalyze" },
         { "command": "simplepod.meshCleanupGames" },
-        { "command": "simplepod.meshCleanupLargeFiles" }
+        { "command": "simplepod.meshCleanupLargeFiles" },
+        { "command": "simplepod.unifiedStart" },
+        { "command": "simplepod.unifiedStop" },
+        { "command": "simplepod.unifiedStatus" },
+        { "command": "simplepod.unifiedGoal" },
+        { "command": "simplepod.unifiedSelfHeal" },
+        { "command": "simplepod.demoPhoneAnalyze" },
+        { "command": "simplepod.demoLLMTest" },
+        { "command": "simplepod.orbitscribeAnalyze" }
       ],
       "view/title": [
         {

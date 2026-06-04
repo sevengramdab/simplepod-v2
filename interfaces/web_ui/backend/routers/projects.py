@@ -205,7 +205,12 @@ async def launch_project(name: str, req: LaunchRequest):
         cmd = [sys.executable, "-m", "streamlit", "run", str(filepath),
                "--server.port", str(port), "--server.headless", "true",
                "--browser.gatherUsageStats", "false"]
-    elif proj_type in ("flask", "fastapi"):
+    elif proj_type == "fastapi":
+        # ELI5: FastAPI is like a blueprint — it needs a server (uvicorn)
+        #       to actually turn on the lights and open the doors.
+        cmd = [sys.executable, "-m", "uvicorn", f"{filepath.stem}:app",
+               "--host", "127.0.0.1", "--port", str(port), "--log-level", "warning"]
+    elif proj_type == "flask":
         cmd = [sys.executable, str(filepath)]
     else:
         return {"success": False, "message": f"Cannot auto-launch {proj_type} projects. Run manually: python {name}"}
@@ -213,11 +218,14 @@ async def launch_project(name: str, req: LaunchRequest):
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=str(_PROJECT_ROOT))
         time.sleep(3)
+        url = f"http://localhost:{port}"
+        if proj_type == "fastapi":
+            url = f"http://localhost:{port}/docs"
         _RUNNING[name] = {
             "port": port,
             "pid": proc.pid,
             "started": time.time(),
-            "url": f"http://localhost:{port}",
+            "url": url,
             "type": proj_type,
         }
         return {"success": True, "message": f"Launched on port {port}", "port": port, "url": _RUNNING[name]["url"]}

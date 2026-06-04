@@ -1,0 +1,113 @@
+======================================================================
+PHONE EXTRACTION ANALYSIS REPORT
+Device Owner: Sarah Reynolds
+Risk Level:   CRITICAL
+======================================================================
+
+SUMMARY:
+  Contacts:  5
+  Messages:  203
+  Calls:     11
+  Media:     6
+
+OVERALL RISK LEVEL: CRITICAL
+
+EMOTIONAL AFFAIR INDICATORS DETECTED:
+  • Thread 'marcus_jessica': intimacy_score=0.392 (Marcus, Jessica)
+  • Thread 'sarah_derek': intimacy_score=0.702 (Derek, Sarah)
+  • Thread 'sarah_marcus': intimacy_score=0.673 (Derek, Marcus, Sarah)
+  • Thread 'sarah_mom': intimacy_score=0.741 (Mom, Sarah)
+
+CONTROLLING/ABUSIVE DYNAMICS DETECTED:
+  • Thread 'marcus_jessica': control_score=0.588
+  • Thread 'sarah_derek': control_score=0.789
+    - [isolation_tactic] Derek: 'you'll be back. you need me. nobody else wants damaged goods...'
+  • Thread 'sarah_marcus': control_score=0.48
+    - [abuse_environment] Sarah: 'derek used to be like that. before the accident. now it's li...'
+    - [guilt_trap] Sarah: 'i know. i know. but i can't just... leave him. he's disabled...'
+    - [blame_shifting] Marcus: 'sarah. that's not your fault....'
+
+RED FLAGS ACROSS 1 THREAD(S):
+  • sarah_marcus: 13 flag(s)
+
+POWER DYNAMICS:
+  • sarah_marcus: Sarah dominates conversation (4.2x more messages)
+
+----------------------------------------------------------------------
+THREAD-BY-THREAD BREAKDOWN
+----------------------------------------------------------------------
+
+[THREAD] marcus_jessica
+  Participants: Marcus, Jessica
+  Messages:     17
+  Sentiment:    neutral (pos=0.006, neg=0.017)
+  Intimacy:     0.392
+  Control:      0.588
+
+[THREAD] sarah_derek
+  Participants: Derek, Sarah
+  Messages:     38
+  Sentiment:    neutral (pos=0.031, neg=0.008)
+  Intimacy:     0.702
+  Control:      0.789
+  [!] Red Flags (1):
+      - [isolation_tactic] Derek: 'you'll be back. you need me. nobody else wants damaged goods...'
+  [KEY] Key Phrases:
+      - [Sarah] I know. I'm sorry. I'll pick up Thai on the way home.
+      - [Derek] You know I can't eat Thai. The spices mess with my meds.
+      - [Derek] Not there yet? It's been THREE YEARS. What's the holdup, Sarah? Is it ...
+      - [Derek] Taking care isn't the same as loving. Even I know that.
+
+[THREAD] sarah_jessica
+  Participants: Jessica, Sarah
+  Messages:     31
+  Sentiment:    neutral (pos=0.005, neg=0.015)
+  Intimacy:     0.215
+  Control:      0.161
+  [!] Red Flags (1):
+      - [control] Sarah: 'i want to wake up and not feel guilty before my feet hit the...'
+  [KEY] Key Phrases:
+      - [Jessica] Pain doesn't make you cruel. Cruel makes you cruel. My clients in whee...
+
+[THREAD] sarah_marcus
+  Participants: Derek, Marcus, Sarah
+  Messages:     99
+  Sentiment:    neutral (pos=0.015, neg=0.023)
+  Intimacy:     0.673
+  Control:      0.48
+  Imbalance:    Sarah dominates conversation (4.2x more messages)
+  [!] Red Flags (13):
+      - [abuse_environment] Sarah: 'derek used to be like that. before the accident. now it's li...'
+      - [guilt_trap] Sarah: 'i know. i know. but i can't just... leave him. he's disabled...'
+      - [blame_shifting] Marcus: 'sarah. that's not your fault....'
+      - [privacy_violation] Sarah: 'derek went through my laptop while i was showering...'
+      - [property_destruction] Sarah: 'i know. he doesn't care. he said 'where there's smoke there'...'
+      - [abuse_acknowledgment] Marcus: 'that doesn't give him the right to terrorize you....'
+      - [entrapment] Sarah: 'i can't leave. he's watching the ring camera....'
+      - [surveillance] Sarah: 'i can't leave. he's watching the ring camera....'
+      - [imprisonment_metaphor] Sarah: 'i never promised to be your prisoner....'
+      - [suffocation] Sarah: 'i'm not leaving you for him. i'm leaving you because i can't...'
+      - [threat] Derek: 'you'll regret this. i'll make sure everyone knows what you d...'
+      - [social_destruction_threat] Derek: 'you'll regret this. i'll make sure everyone knows what you d...'
+      - [retaliation_threat] Derek: 'you'll regret this. i'll make sure everyone knows what you d...'
+  [KEY] Key Phrases:
+      - [Sarah] I know. I KNOW. But I can't just... leave him. He's disabled because o...
+      - [Marcus] Shit. I'm sorry. That was too much. Forget I said that.
+      - [Sarah] I know. But Derek can't work. He can't drive. His mom blames me alread...
+      - [Sarah] I know. He doesn't care. He said 'where there's smoke there's fire' an...
+      - [Marcus] Then let him see me. I'm done hiding.
+      - [Sarah] I can't leave. He's watching the Ring camera.
+      - [Marcus] Sarah. I love you. I know it's the wrong time and the wrong way but I ...
+      - [Sarah] I'm not leaving you FOR him. I'm leaving you because I can't breathe a...
+      - [Sarah] ...do what you need to do, Derek. I'm done being afraid.
+
+[THREAD] sarah_mom
+  Participants: Mom, Sarah
+  Messages:     18
+  Sentiment:    neutral (pos=0.038, neg=0.026)
+  Intimacy:     0.741
+  Control:      0.0
+  [!] Red Flags (1):
+      - [property_destruction] Sarah: 'dad never threw plates at the wall....'
+
+======================================================================

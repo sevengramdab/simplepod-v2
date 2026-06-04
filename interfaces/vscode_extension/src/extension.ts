@@ -488,6 +488,195 @@ function registerCommands(context: vscode.ExtensionContext): void {
         vscode.window.showInformationMessage(res?.files ? `${res.files.length} large files on ${pick.node.node_id}` : 'Scan complete');
     });
 
+    // -----------------------------------------------------------------------
+    // SimplePod Unified commands
+    // ELI5: Controls for the new smart automation wing.
+    // -----------------------------------------------------------------------
+    const unifiedStart = vscode.commands.registerCommand('simplepod.unifiedStart', async () => {
+        const res = await client.unifiedStart();
+        if (res) {
+            vscode.window.showInformationMessage('🔥 SimplePod Unified pipeline started');
+        } else {
+            vscode.window.showErrorMessage('❌ Failed to start Unified pipeline');
+        }
+    });
+
+    const unifiedStop = vscode.commands.registerCommand('simplepod.unifiedStop', async () => {
+        const res = await client.unifiedStop();
+        if (res) {
+            vscode.window.showInformationMessage('🛑 SimplePod Unified pipeline stopped');
+        } else {
+            vscode.window.showErrorMessage('❌ Failed to stop Unified pipeline');
+        }
+    });
+
+    const unifiedStatus = vscode.commands.registerCommand('simplepod.unifiedStatus', async () => {
+        const res = await client.unifiedStatus();
+        if (!res) {
+            vscode.window.showErrorMessage('❌ Failed to get Unified status');
+            return;
+        }
+        const lines = [
+            `Pipeline: ${res.pipeline_state}`,
+            `Workers: ${res.swarm?.total_workers || 0}`,
+            `Active Goals: ${res.active_goals}`,
+            `Vision: ${res.vision_engine_ready ? '✅' : '❌'}`,
+            `OS: ${res.os_interface_ready ? '✅' : '❌'}`,
+            `Healing: ${res.healing_engine_ready ? '✅' : '❌'}`,
+        ];
+        const doc = await vscode.workspace.openTextDocument({
+            content: lines.join('\n'),
+            language: 'plaintext',
+        });
+        await vscode.window.showTextDocument(doc, { preview: true });
+    });
+
+    const unifiedGoal = vscode.commands.registerCommand('simplepod.unifiedGoal', async () => {
+        const goal = await vscode.window.showInputBox({
+            prompt: 'Enter a goal for the Unified pipeline',
+            placeHolder: 'e.g. Click the OK button, Heal the auth module, Type hello',
+        });
+        if (!goal) return;
+        const res = await client.unifiedGoal(goal);
+        if (res?.goal_id) {
+            vscode.window.showInformationMessage(`🎯 Goal accepted: ${res.goal_id}`);
+        } else {
+            vscode.window.showErrorMessage('❌ Failed to submit goal');
+        }
+    });
+
+    const unifiedSelfHeal = vscode.commands.registerCommand('simplepod.unifiedSelfHeal', async () => {
+        const target = await vscode.window.showInputBox({
+            prompt: 'Directory or file to heal',
+            value: '.',
+        }) || '.';
+        vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'SimplePod Unified: Running self-healing...',
+            cancellable: false,
+        }, async () => {
+            const res = await client.unifiedSelfHeal(target);
+            if (res?.sessions) {
+                vscode.window.showInformationMessage(`✅ Healed ${res.file_count} file(s)`);
+            } else if (res?.session_id) {
+                vscode.window.showInformationMessage(`✅ Healing session started: ${res.session_id}`);
+            } else {
+                vscode.window.showErrorMessage('❌ Self-healing failed');
+            }
+        });
+    });
+
+    // -----------------------------------------------------------------------
+    // Demo / Test commands (No LLM required)
+    // -----------------------------------------------------------------------
+    const demoPhoneAnalyze = vscode.commands.registerCommand('simplepod.demoPhoneAnalyze', async () => {
+        const res = await client.demoPhoneAnalyze();
+        if (!res) {
+            vscode.window.showErrorMessage('❌ Phone analysis failed');
+            return;
+        }
+        const lines = [
+            `DEVICE: ${res.device_owner}`,
+            `RISK: ${res.risk_level.toUpperCase()}`,
+            `Messages: ${res.total_messages} | Calls: ${res.total_calls} | Media: ${res.total_media}`,
+            '',
+            'THREADS:',
+            ...res.thread_analyses.map((t: any) =>
+                `  ${t.thread_id}: intimacy=${t.intimacy_score} control=${t.control_score} flags=${t.red_flags?.length || 0}`
+            ),
+            '',
+            'ASSESSMENT:',
+            res.overall_assessment,
+        ];
+        const doc = await vscode.workspace.openTextDocument({
+            content: lines.join('\n'),
+            language: 'plaintext',
+        });
+        await vscode.window.showTextDocument(doc, { preview: true });
+    });
+
+    const demoLLMTest = vscode.commands.registerCommand('simplepod.demoLLMTest', async () => {
+        const prompt = await vscode.window.showInputBox({
+            prompt: 'Test the free LLM fallback (no signup required)',
+            value: 'Write a one-sentence joke about electricians',
+        });
+        if (!prompt) return;
+        vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: 'Testing free LLM fallback...',
+            cancellable: false,
+        }, async () => {
+            const res = await client.demoLLMTest(prompt);
+            if (res?.success) {
+                vscode.window.showInformationMessage(`✅ ${res.source}: ${res.response?.substring(0, 80)}...`);
+                const doc = await vscode.workspace.openTextDocument({
+                    content: `Source: ${res.source}\n\n${res.response}`,
+                    language: 'markdown',
+                });
+                await vscode.window.showTextDocument(doc, { preview: true });
+            } else {
+                vscode.window.showErrorMessage(`❌ LLM test failed: ${res?.response || 'Unknown error'}`);
+            }
+        });
+    });
+
+    const orbitscribeAnalyze = vscode.commands.registerCommand('simplepod.orbitscribeAnalyze', async () => {
+        const mode = await vscode.window.showQuickPick(
+            [
+                { label: '⚡ Instant Demo (synthetic)', value: 'synthetic' },
+                { label: '🤖 Auto (LLM with fallback)', value: 'auto' },
+                { label: '🧠 Full LLM (slow)', value: 'llm' },
+            ],
+            { placeHolder: 'Select OrbitScribe analysis mode' },
+        );
+        if (!mode) return;
+        vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: `OrbitScribe: Running ${mode.value} analysis...`,
+            cancellable: false,
+        }, async () => {
+            const res = await client.orbitscribeAnalyze(mode.value);
+            if (!res || !res.success) {
+                vscode.window.showErrorMessage('❌ OrbitScribe analysis failed');
+                return;
+            }
+            const lines = [
+                `ORBITSCRIBE RELATIONSHIP REPORT`,
+                `Mode: ${res.mode} | LLM: ${res.llm_used ? 'YES' : 'NO'}`,
+                `Risk Level: ${res.risk_level.toUpperCase()}`,
+                ``,
+                `ATTACHMENT ANALYSES (${res.attachment_analyses?.length || 0}):`,
+                ...(res.attachment_analyses || []).map((a: any) =>
+                    `  ${a.subject} ↔ ${a.partner}: ${a.attachment_style} (${(a.confidence * 100).toFixed(0)}%)`
+                ),
+                ``,
+                `TRIANGULATION EVENTS (${res.triangulation_events?.length || 0}):`,
+                ...(res.triangulation_events || []).map((t: any) =>
+                    `  ${t.speaker} → ${t.listener} (about ${t.target}): ${(t.manipulative_score * 100).toFixed(0)}% manipulative`
+                ),
+                ``,
+                `EMOTIONAL TRAJECTORIES (${res.emotional_trajectories?.length || 0}):`,
+                ...(res.emotional_trajectories || []).map((et: any) =>
+                    `  ${et.thread_id}: ${et.start_sentiment} → ${et.end_sentiment} (${et.trajectory})`
+                ),
+                ``,
+                `RELATIONSHIP GRAPH (${res.relationship_graph?.length || 0} nodes):`,
+                ...(res.relationship_graph || []).map((n: any) =>
+                    `  ${n.name} (${n.role}): ${n.risk_profile} | centrality ${(n.centrality_score * 100).toFixed(0)}%`
+                ),
+                ``,
+                `NARRATIVE:`,
+                res.overall_narrative || '(none)',
+            ];
+            const doc = await vscode.workspace.openTextDocument({
+                content: lines.join('\n'),
+                language: 'plaintext',
+            });
+            await vscode.window.showTextDocument(doc, { preview: true });
+            vscode.window.showInformationMessage(`✅ OrbitScribe complete: ${res.risk_level.toUpperCase()} risk`);
+        });
+    });
+
     context.subscriptions.push(
         openDashboard, openControlPanel, captureScreen, quickChat,
         activateSwarm, shutdownSwarm, spawnAgents, killAgent, removeAgent,
@@ -496,6 +685,8 @@ function registerCommands(context: vscode.ExtensionContext): void {
         remoteScroll, remoteDrag, remoteScreenshot, openKimiBridge, startShadowWatcherCmd,
         cleanupAnalyze, cleanupGames, cleanupLargeFiles, cleanupSafetyAudit, cleanupExecute,
         meshCleanupAnalyze, meshCleanupGames, meshCleanupLargeFiles,
+        unifiedStart, unifiedStop, unifiedStatus, unifiedGoal, unifiedSelfHeal,
+        demoPhoneAnalyze, demoLLMTest, orbitscribeAnalyze,
     );
 }
 

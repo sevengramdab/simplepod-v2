@@ -1,0 +1,53 @@
+{
+  "locations": [
+    {
+      "lat": 40.7128,
+      "lon": -74.006,
+      "name": "Novatech HQ",
+      "timestamp": "2026-03-02T09:00:00",
+      "duration_min": 600
+    },
+    {
+      "lat": 40.715,
+      "lon": -74.008,
+      "name": "Thai Garden Restaurant",
+      "timestamp": "2026-03-04T11:00:00",
+      "duration_min": 45
+    },
+    {
+      "lat": 40.72,
+      "lon": -74.01,
+      "name": "Sarah's Apartment",
+      "timestamp": "2026-03-04T16:00:00",
+      "duration_min": 180
+    },
+    {
+      "lat": 40.758,
+      "lon": -73.9855,
+      "name": "Grand Hotel \u2014 Offsite",
+      "timestamp": "2026-03-09T09:00:00",
+      "duration_min": 2880
+    },
+    {
+      "lat": 40.715,
+      "lon": -74.008,
+      "name": "Sarah's Apartment",
+      "timestamp": "2026-03-13T09:00:00",
+      "duration_min": 120
+    },
+    {
+      "lat": 40.7205,
+      "lon": -74.011,
+      "name": "Marcus's Apartment",
+      "timestamp": "2026-03-17T09:00:00",
+      "duration_min": 180
+    },
+    {
+      "lat": 40.73,
+      "lon": -73.995,
+      "name": "Jessica's Apartment",
+      "timestamp": "2026-03-19T01:00:00",
+      "duration_min": 600
+    }
+  ]
+}

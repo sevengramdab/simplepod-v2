@@ -85,10 +85,15 @@ def launch_app(project: dict):
         cmd = [sys.executable, "-m", "streamlit", "run", project["path"],
                "--server.port", str(port), "--server.headless", "true",
                "--browser.gatherUsageStats", "false"]
-    elif project["type"] in ("Flask", "FastAPI"):
+    elif project["type"] == "FastAPI":
+        # ELI5: FastAPI is just a blueprint. We need uvicorn to actually
+        #       turn on the electricity and serve customers at the door.
+        stem = Path(project["path"]).stem
+        cmd = [sys.executable, "-m", "uvicorn", f"{stem}:app",
+               "--host", "127.0.0.1", "--port", str(port), "--log-level", "warning"]
+    elif project["type"] == "Flask":
         env = os.environ.copy()
         env["FLASK_RUN_PORT"] = str(port)
-        # For Flask apps, just run the python file directly
         cmd = [sys.executable, project["path"]]
     elif project["type"] == "CLI":
         st.info(f"{project['name']} is a CLI app. Run it manually with: `python {project['file']} --help`")
@@ -98,12 +103,15 @@ def launch_app(project: dict):
 
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=str(PROJECT_ROOT))
-        time.sleep(3)  # Give it time to start
+        time.sleep(4)  # Give it time to start (uvicorn needs a moment)
+        url = f"http://localhost:{port}"
+        if project["type"] == "FastAPI":
+            url = f"http://localhost:{port}/docs"
         running[project["file"]] = {
             "port": port,
             "pid": proc.pid,
             "started": datetime.now().strftime("%H:%M:%S"),
-            "url": f"http://localhost:{port}",
+            "url": url,
         }
         st.session_state.running_apps = running
         st.success(f"Launched {project['name']} on port {port}")

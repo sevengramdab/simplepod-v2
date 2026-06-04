@@ -1,0 +1,138 @@
+{
+  "thread_id": "sarah_mom",
+  "participants": [
+    "Mom",
+    "Sarah"
+  ],
+  "message_count": 18,
+  "first_message": "2026-03-03T09:00:00",
+  "last_message": "2026-03-11T19:00:00",
+  "messages": [
+    {
+      "message_id": "msg_503457",
+      "sender": "Mom",
+      "text": "Psalm 31:24 \u2014 'Be strong and take heart, all you who hope in the Lord.' Thinking of you and Derek today \u2764\ufe0f",
+      "timestamp": "2026-03-03T09:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_500156",
+      "sender": "Sarah",
+      "text": "Thanks Mom",
+      "timestamp": "2026-03-03T09:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_724834",
+      "sender": "Mom",
+      "text": "Have you two set a date yet? I'm not getting younger and I want grandchildren while I can still lift them.",
+      "timestamp": "2026-03-03T10:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_590785",
+      "sender": "Sarah",
+      "text": "We're not there yet. Things are... complicated.",
+      "timestamp": "2026-03-03T10:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_654816",
+      "sender": "Mom",
+      "text": "Life is complicated, Sarah. Marriage is complicated. You think your father and I didn't have hard years? But we STAYED. That's what love IS.",
+      "timestamp": "2026-03-03T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_363626",
+      "sender": "Sarah",
+      "text": "Dad never threw plates at the wall.",
+      "timestamp": "2026-03-03T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_680099",
+      "sender": "Mom",
+      "text": "...what?",
+      "timestamp": "2026-03-03T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_112038",
+      "sender": "Sarah",
+      "text": "Nothing. I have to go. Meeting.",
+      "timestamp": "2026-03-03T12:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_813328",
+      "sender": "Mom",
+      "text": "I ran into Mrs. Holloway at the pharmacy. She said Derek has been calling her crying. What's going on?",
+      "timestamp": "2026-03-11T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_855731",
+      "sender": "Sarah",
+      "text": "I'm thinking about leaving him, Mom.",
+      "timestamp": "2026-03-11T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_220116",
+      "sender": "Mom",
+      "text": "SARAH ELIZABETH REYNOLDS. That man gave up his BODY for you. You cannot abandon him because things got HARD.",
+      "timestamp": "2026-03-11T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_814825",
+      "sender": "Sarah",
+      "text": "He didn't give up his body FOR me. It was an accident. And he's cruel to me every day.",
+      "timestamp": "2026-03-11T14:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_663054",
+      "sender": "Mom",
+      "text": "He's in PAIN, baby. Pain makes people say things they don't mean.",
+      "timestamp": "2026-03-11T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_887352",
+      "sender": "Sarah",
+      "text": "He means them, Mom. He told me nobody else would want me. He threatened to post about the accident. He's not in pain. He's vicious.",
+      "timestamp": "2026-03-11T15:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_379786",
+      "sender": "Mom",
+      "text": "...you're not seeing clearly. You're tired. Go to church this Sunday. Pray on it.",
+      "timestamp": "2026-03-11T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_905934",
+      "sender": "Sarah",
+      "text": "I don't need prayer. I need support. Actual support. Not guilt wrapped in Bible verses.",
+      "timestamp": "2026-03-11T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_772097",
+      "sender": "Mom",
+      "text": "Watch your tone. I am still your mother.",
+      "timestamp": "2026-03-11T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_456699",
+      "sender": "Sarah",
+      "text": "And I'm still your daughter. But I'm also a PERSON. Goodbye, Mom.",
+      "timestamp": "2026-03-11T19:00:00",
+      "read": true
+    }
+  ]
+}

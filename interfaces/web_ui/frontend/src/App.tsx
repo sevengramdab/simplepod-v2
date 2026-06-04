@@ -19,6 +19,7 @@ import { MyTasks } from '@/pages/MyTasks'
 import { Webhooks } from '@/pages/Webhooks'
 import { StripePayments } from '@/pages/StripePayments'
 import { NodeDashboard } from '@/pages/NodeDashboard'
+import { OrbitScribe } from '@/pages/OrbitScribe'
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/webhooks" element={<Webhooks />} />
           <Route path="/payments" element={<StripePayments />} />
           <Route path="/node-dashboard" element={<NodeDashboard />} />
+          <Route path="/orbitscribe" element={<OrbitScribe />} />
         </Routes>
       </Layout>
     </ToastContextProvider>

@@ -26,7 +26,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from .dependencies import init_dependencies
-from .routers import nodes, remote, routing, settings as settings_router, sitk, swarm, telemetry, orbstudio, screenshot, hardware, simpleswarm, swarm_coder, mesh, projects, mesh_remote, billing, notifications, stripe_integration, code_quality, cleanup
+from .routers import nodes, remote, routing, settings as settings_router, sitk, swarm, telemetry, orbstudio, screenshot, hardware, simpleswarm, swarm_coder, mesh, projects, mesh_remote, billing, notifications, stripe_integration, code_quality, cleanup, unified as unified_router
 from .settings_store import get_settings as _get_settings
 
 
@@ -235,6 +235,12 @@ async def lifespan(app: FastAPI):
         async def _run_survey_round(self):
             await catalog.probe()
 
+    # Wire the SimplePod Unified orchestrator (20-node swarm).
+    from core.unified import SimplePodUnifiedOrchestrator, UnifiedConfig
+    unified_cfg = UnifiedConfig()
+    unified_orch = SimplePodUnifiedOrchestrator(config=unified_cfg)
+    unified_router.set_orchestrator(unified_orch)
+
     init_dependencies(
         orchestrator=orchestrator,
         main_breaker=main_breaker,
@@ -246,6 +252,10 @@ async def lifespan(app: FastAPI):
     # Shutdown
     try:
         orchestrator.shutdown(wait=False)
+    except Exception:
+        pass
+    try:
+        await unified_orch.stop()
     except Exception:
         pass
 
@@ -290,6 +300,7 @@ def create_app() -> FastAPI:
     app.include_router(stripe_integration.router)
     app.include_router(code_quality.router)
     app.include_router(cleanup.router)
+    app.include_router(unified_router.router)
 
     # Serve the static dashboard (replaces broken Streamlit).
     static_dir = Path(__file__).parent.parent / "static"

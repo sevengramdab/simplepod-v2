@@ -1,0 +1,131 @@
+{
+  "thread_id": "marcus_jessica",
+  "participants": [
+    "Marcus",
+    "Jessica"
+  ],
+  "message_count": 17,
+  "first_message": "2026-03-06T13:00:00",
+  "last_message": "2026-03-16T08:00:00",
+  "messages": [
+    {
+      "message_id": "msg_216970",
+      "sender": "Jessica",
+      "text": "Hey. Sarah's friend. Need to ask you something and I need the truth.",
+      "timestamp": "2026-03-06T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_407757",
+      "sender": "Marcus",
+      "text": "Jessica, right? Sarah talks about you constantly. What's up?",
+      "timestamp": "2026-03-06T13:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_555884",
+      "sender": "Jessica",
+      "text": "What are your intentions with her? Because if you're just looking for a work-wife to entertain you between product sprints, I will END you.",
+      "timestamp": "2026-03-06T13:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_265840",
+      "sender": "Marcus",
+      "text": "Whoa. Okay. Deep breath. I am divorced, in therapy, and absolutely not looking for entertainment. I care about her. A lot.",
+      "timestamp": "2026-03-06T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_575763",
+      "sender": "Jessica",
+      "text": "She's fragile right now. Derek has worn her down to nothing. If you add to that damage, I swear to god\u2014",
+      "timestamp": "2026-03-06T14:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_103402",
+      "sender": "Marcus",
+      "text": "I want to BUILD her back up. Not take pieces. I'm not him.",
+      "timestamp": "2026-03-06T15:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_857168",
+      "sender": "Jessica",
+      "text": "...okay. You're on probation. But I'm watching.",
+      "timestamp": "2026-03-06T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_854639",
+      "sender": "Marcus",
+      "text": "Fair. Can I ask you something? How do I help her without making her feel rescued?",
+      "timestamp": "2026-03-06T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_376183",
+      "sender": "Jessica",
+      "text": "Treat her like she's already whole. She just forgot.",
+      "timestamp": "2026-03-06T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_624902",
+      "sender": "Marcus",
+      "text": "She's at my place. Derek threatened to post about the accident.",
+      "timestamp": "2026-03-16T03:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_898975",
+      "sender": "Jessica",
+      "text": "I'm getting the lawyer. And my cousin who does digital security. If Derek posts anything we nuke it from orbit.",
+      "timestamp": "2026-03-16T03:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_287330",
+      "sender": "Marcus",
+      "text": "She won't let me call the police. She says he's 'not well.'",
+      "timestamp": "2026-03-16T03:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_632342",
+      "sender": "Jessica",
+      "text": "He's well enough to manipulate her. She's been gaslit so long she thinks HIS pain is HER fault. Classic trauma bonding.",
+      "timestamp": "2026-03-16T04:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_211579",
+      "sender": "Marcus",
+      "text": "How do I get her to see it?",
+      "timestamp": "2026-03-16T05:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_755674",
+      "sender": "Jessica",
+      "text": "You can't. She has to see it herself. All you can do is be the safe place she comes back to when she does.",
+      "timestamp": "2026-03-16T06:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_412942",
+      "sender": "Marcus",
+      "text": "I'm scared I'll lose her to guilt before she gets there.",
+      "timestamp": "2026-03-16T07:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_982554",
+      "sender": "Jessica",
+      "text": "Me too, Marcus. Me too. But for the first time in years, she's CONSIDERING leaving. That's the first domino. Don't knock it over.",
+      "timestamp": "2026-03-16T08:00:00",
+      "read": true
+    }
+  ]
+}

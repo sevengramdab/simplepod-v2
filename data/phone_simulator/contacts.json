@@ -1,0 +1,104 @@
+{
+  "contacts": [
+    {
+      "id": "c1",
+      "phone_number": "+1-555-0142",
+      "name": "Marcus Chen",
+      "nickname": "Marcus",
+      "relationship": "Coworker",
+      "photo": "contacts/marcus.jpg",
+      "notes": "Product design lead. Loves hiking. Divorced 2 years ago. Has a golden retriever named Buster.",
+      "birthday": "1995-03-18",
+      "email": "marcus.chen@novatech.io",
+      "social": {
+        "instagram": "@marcus.hikes",
+        "linkedin": "marcuschen-design"
+      },
+      "metadata": {
+        "last_seen_app": "WhatsApp",
+        "read_receipts_enabled": true,
+        "typing_indicators": true
+      }
+    },
+    {
+      "id": "c2",
+      "phone_number": "+1-555-0199",
+      "name": "Derek Holloway",
+      "nickname": "Derek \ud83d\udc94",
+      "relationship": "Boyfriend",
+      "photo": "contacts/derek.jpg",
+      "notes": "Former construction foreman. Motorcycle accident, T12 spinal injury, wheelchair bound. Angry at the world. Pain management issues. Hates that Sarah works late.",
+      "birthday": "1993-08-04",
+      "email": "derek.holloway@gmail.com",
+      "social": {
+        "facebook": "derek.holloway.93"
+      },
+      "metadata": {
+        "last_seen_app": "SMS",
+        "read_receipts_enabled": false,
+        "typing_indicators": false,
+        "blocked_apps": [
+          "Instagram",
+          "Snapchat"
+        ]
+      }
+    },
+    {
+      "id": "c3",
+      "phone_number": "+1-555-0177",
+      "name": "Jessica Morales",
+      "nickname": "Jess \ud83e\udd2b",
+      "relationship": "Best Friend",
+      "photo": "contacts/jessica.jpg",
+      "notes": "Sarah's ride-or-die since college. Therapist in training. Knows EVERYTHING. Keeps telling Sarah to leave Derek.",
+      "birthday": "1996-11-22",
+      "email": "jess.morales@therapycollective.org",
+      "social": {
+        "instagram": "@jess.therapydaze",
+        "tiktok": "@jesstellsit"
+      },
+      "metadata": {
+        "last_seen_app": "iMessage",
+        "read_receipts_enabled": true,
+        "typing_indicators": true
+      }
+    },
+    {
+      "id": "c4",
+      "phone_number": "+1-555-0101",
+      "name": "Mom",
+      "nickname": "Mom \u2764\ufe0f",
+      "relationship": "Mother",
+      "photo": "contacts/mom.jpg",
+      "notes": "Traditional. Thinks Sarah should 'stand by her man.' Prays every night. Sends Bible verses unironically.",
+      "birthday": "1968-05-12",
+      "email": "patricia.reynolds@yahoo.com",
+      "social": {
+        "facebook": "patricia.reynolds.68"
+      },
+      "metadata": {
+        "last_seen_app": "SMS",
+        "read_receipts_enabled": true,
+        "typing_indicators": false
+      }
+    },
+    {
+      "id": "c5",
+      "phone_number": "+1-555-0163",
+      "name": "Amanda from HR",
+      "nickname": "Amanda HR",
+      "relationship": "HR Representative",
+      "photo": "contacts/amanda.jpg",
+      "notes": "Has noticed Sarah and Marcus working late. Sent the 'workplace relationships' policy PDF last month.",
+      "birthday": "1987-02-14",
+      "email": "amanda.patel@novatech.io",
+      "metadata": {
+        "last_seen_app": "Email",
+        "read_receipts_enabled": true,
+        "typing_indicators": true
+      }
+    }
+  ],
+  "device_owner": "Sarah Reynolds",
+  "extracted_at": "2026-05-31T12:21:21.568267"
+}

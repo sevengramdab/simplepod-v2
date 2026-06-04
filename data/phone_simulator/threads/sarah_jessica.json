@@ -1,0 +1,236 @@
+{
+  "thread_id": "sarah_jessica",
+  "participants": [
+    "Jessica",
+    "Sarah"
+  ],
+  "message_count": 31,
+  "first_message": "2026-03-02T11:00:00",
+  "last_message": "2026-03-15T21:00:00",
+  "messages": [
+    {
+      "message_id": "msg_174870",
+      "sender": "Sarah",
+      "text": "Girl. Emergency. Can you talk?",
+      "timestamp": "2026-03-02T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_738720",
+      "sender": "Jessica",
+      "text": "Always. What's up?",
+      "timestamp": "2026-03-02T11:06:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_765822",
+      "sender": "Sarah",
+      "text": "I think I have feelings for Marcus.",
+      "timestamp": "2026-03-02T11:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_279451",
+      "sender": "Jessica",
+      "text": "The cute product guy with the dog? ABOUT TIME",
+      "timestamp": "2026-03-02T11:24:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_660086",
+      "sender": "Sarah",
+      "text": "Jess it's not funny!! I'm still with Derek!",
+      "timestamp": "2026-03-02T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_864544",
+      "sender": "Jessica",
+      "text": "Okay okay. Deep breath. Tell me everything. Start from the beginning.",
+      "timestamp": "2026-03-02T11:42:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_356702",
+      "sender": "Sarah",
+      "text": "We worked until 10pm last night. He bought me Thai food. We talked about everything.",
+      "timestamp": "2026-03-04T11:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_271339",
+      "sender": "Jessica",
+      "text": "Thai food is the gateway drug to emotional affairs",
+      "timestamp": "2026-03-04T11:12:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_584714",
+      "sender": "Sarah",
+      "text": "He's just... kind. He asks about my day and actually LISTENS. Derek hasn't asked about my day in two years.",
+      "timestamp": "2026-03-04T11:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_497887",
+      "sender": "Jessica",
+      "text": "Sarah. Babe. Derek hasn't asked about your day because Derek is a narcissist wrapped in a victim complex.",
+      "timestamp": "2026-03-04T12:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_383060",
+      "sender": "Sarah",
+      "text": "He's DISABLED, Jess. He's in constant pain. That changes people.",
+      "timestamp": "2026-03-04T12:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_771088",
+      "sender": "Jessica",
+      "text": "Pain doesn't make you cruel. Cruel makes you cruel. My clients in wheelchairs are some of the gentlest people I know.",
+      "timestamp": "2026-03-04T12:48:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_821590",
+      "sender": "Sarah",
+      "text": "...",
+      "timestamp": "2026-03-04T13:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_684004",
+      "sender": "Jessica",
+      "text": "I'm not saying leave him because of Marcus. I'm saying leave him because he makes you smaller. Marcus is just showing you what big feels like.",
+      "timestamp": "2026-03-04T14:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_330283",
+      "sender": "Sarah",
+      "text": "When did you get so wise",
+      "timestamp": "2026-03-04T14:30:00",
+      "read": true,
+      "reactions": [
+        {
+          "emoji": "\ud83e\udd7a",
+          "user": "Jessica",
+          "timestamp": "2026-03-04T14:42:00"
+        }
+      ]
+    },
+    {
+      "message_id": "msg_817870",
+      "sender": "Sarah",
+      "text": "The offsite happened.",
+      "timestamp": "2026-03-09T16:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_440035",
+      "sender": "Jessica",
+      "text": "AND???",
+      "timestamp": "2026-03-09T16:06:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_983794",
+      "sender": "Sarah",
+      "text": "Nothing physical. But... he told me I deserve baseline happiness. And I cried in a hotel bathroom for 20 minutes.",
+      "timestamp": "2026-03-09T16:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_905635",
+      "sender": "Jessica",
+      "text": "Because it's true?",
+      "timestamp": "2026-03-09T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_913694",
+      "sender": "Sarah",
+      "text": "Because I don't know if I believe it's true. What if Derek is right and I'm just selfish?",
+      "timestamp": "2026-03-09T17:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_158655",
+      "sender": "Jessica",
+      "text": "Want me to list the ways you are NOT selfish? You pay his rent. You cook his meals. You tolerate his abuse. You canceled your sister's wedding trip because he had a 'bad day.' You are MARTYRED, not selfish.",
+      "timestamp": "2026-03-09T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_340174",
+      "sender": "Sarah",
+      "text": "I don't want to be a martyr. I just want to feel like myself again.",
+      "timestamp": "2026-03-09T19:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_961722",
+      "sender": "Jessica",
+      "text": "Then take the leap, baby. I'll catch you.",
+      "timestamp": "2026-03-09T20:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_133659",
+      "sender": "Sarah",
+      "text": "Derek found out.",
+      "timestamp": "2026-03-15T17:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_944151",
+      "sender": "Jessica",
+      "text": "I'm getting in my car.",
+      "timestamp": "2026-03-15T17:06:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_430776",
+      "sender": "Sarah",
+      "text": "NO. I'm okay. I mean I'm not okay but I'm safe. He threatened to post about the accident.",
+      "timestamp": "2026-03-15T17:18:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_520651",
+      "sender": "Jessica",
+      "text": "That's illegal. Coercion, harassment, defamation. I can call my lawyer friend right now.",
+      "timestamp": "2026-03-15T17:30:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_380746",
+      "sender": "Sarah",
+      "text": "I just need to figure out what I want. For the first time in three years.",
+      "timestamp": "2026-03-15T18:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_169403",
+      "sender": "Jessica",
+      "text": "What do you want?",
+      "timestamp": "2026-03-15T19:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_321231",
+      "sender": "Sarah",
+      "text": "I want to wake up and not feel guilty before my feet hit the floor. I want someone to bring me coffee instead of demanding it. I want to laugh until my face hurts. I want... him. Marcus. Is that terrible?",
+      "timestamp": "2026-03-15T20:00:00",
+      "read": true
+    },
+    {
+      "message_id": "msg_694731",
+      "sender": "Jessica",
+      "text": "No, babe. That's the most human thing you've said in years.",
+      "timestamp": "2026-03-15T21:00:00",
+      "read": true
+    }
+  ]
+}
