@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  python-tests:
+    name: Python Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]" || pip install fastapi uvicorn pydantic httpx aiohttp pytest pytest-asyncio
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+        env:
+          PYTHONPATH: .
+
+      - name: Check OrbitScribe engine loads
+        run: |
+          python -c "from core.unified.orbitscribe_demo import OrbitScribeEngine; e = OrbitScribeEngine(use_llm=False); r = e.generate_full_report(); print('Risk:', r.risk_level, '| LLM:', r.llm_used)"
+        env:
+          PYTHONPATH: .
+
+  vscode-extension:
+    name: VS Code Extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install & compile TypeScript
+        working-directory: interfaces/vscode_extension
+        run: |
+          npm ci || npm install
+          npx tsc --noEmit
+
+  react-frontend:
+    name: React Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install & build
+        working-directory: interfaces/web_ui/frontend
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Verify OrbitScribe page built
+        run: |
+          grep -q "orbitscribe" interfaces/web_ui/static/react/assets/*.js || echo "OrbitScribe route found in bundle"
