@@ -1,0 +1,25 @@
+# ELI5: When you pack the panel for shipping, these are the items
+#       that must go in the crate alongside the metal box.
+
+include README.md
+include LICENSE
+include AGENTS.md
+include CHANGELOG.md
+include config.yaml
+include .env.example
+
+recursive-include core *.py
+recursive-include interfaces/web_ui/backend *.py
+recursive-include data/phone_simulator *.json *.py *.txt
+recursive-include tests *.py
+recursive-include scripts *.py *.sh *.ps1
+recursive-include interfaces/web_ui/static/react *
+
+exclude .venv
+exclude __pycache__
+exclude *.pyc
+exclude .git*
+exclude ark_backups
+exclude telemetry_logs
+exclude context_checkpoints
+exclude node_modules

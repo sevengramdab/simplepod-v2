@@ -1,8 +1,22 @@
 {
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@simplepod/dashboard",
+  "version": "2.6.0",
+  "description": "SimplePod Swarm Dashboard — React frontend for the 20-node agentic swarm",
   "type": "module",
+  "author": "SimplePod Swarm Maintainers",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevengramdab/simplepod-v2.git",
+    "directory": "interfaces/web_ui/frontend"
+  },
+  "homepage": "https://github.com/sevengramdab/simplepod-v2#readme",
+  "bugs": "https://github.com/sevengramdab/simplepod-v2/issues",
+  "files": [
+    "dist",
+    "../static/react"
+  ],
+  "scripts": {
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

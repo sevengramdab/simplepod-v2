@@ -79,16 +79,18 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/simplepod/swarm"
-Documentation = "https://github.com/simplepod/swarm/docs"
-Repository = "https://github.com/simplepod/swarm.git"
-Issues = "https://github.com/simplepod/swarm/issues"
+Homepage = "https://github.com/sevengramdab/simplepod-v2"
+Documentation = "https://github.com/sevengramdab/simplepod-v2#readme"
+Repository = "https://github.com/sevengramdab/simplepod-v2.git"
+Issues = "https://github.com/sevengramdab/simplepod-v2/issues"
 
 [project.scripts]
-simplepod = "simplepod.cli:main"
+simplepod = "core.cli:main"
+simplepod-server = "core.cli:server"
+simplepod-orbitscribe = "core.cli:orbitscribe"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/simplepod"]
+packages = ["core", "interfaces", "data", "tests", "scripts"]
 
 # ── Ruff ────────────────────────────────────────────────────────────────────
 [tool.ruff]
@@ -148,7 +150,7 @@ python_functions = ["test_*"]
 addopts = [
     "--strict-markers",
     "--strict-config",
-    "--cov=src/simplepod",
+    "--cov=core",
     "--cov-report=term-missing",
     "--cov-report=html:htmlcov",
 ]
@@ -160,11 +162,13 @@ markers = [
 
 # ── Coverage ────────────────────────────────────────────────────────────────
 [tool.coverage.run]
-source = ["src/simplepod"]
+source = ["core"]
 omit = [
     "*/tests/*",
     "*/scripts/*",
     "*/ui/*",
+    "*/frontend/*",
+    "*/vscode_extension/*",
 ]
 
 [tool.coverage.report]
