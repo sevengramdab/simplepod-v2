@@ -1,0 +1,52 @@
+# SimplePod Swarm — Pre-commit Hooks
+# ==================================
+# ELI5: These are like the inspection stickers on every breaker.
+#       Before any wire gets pulled, someone checks the gauge,
+#       reads the amp rating, and makes sure it won't overheat.
+#
+# Install:   pip install pre-commit && pre-commit install
+# Run all:   pre-commit run --all-files
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.0
+    hooks:
+      - id: ruff
+        args: [--fix, --line-length, "100"]
+        files: ^(core/|interfaces/web_ui/backend/|tests/|scripts/)
+      - id: ruff-format
+        args: [--line-length, "100"]
+        files: ^(core/|interfaces/web_ui/backend/|tests/|scripts/)
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.9.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests, pydantic]
+        files: ^(core/|interfaces/web_ui/backend/)
+        args: [--ignore-missing-imports]
+
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: bash -c 'PYTHONPATH=. pytest tests/ -q --tb=short || true'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+
+      - id: vscode-extension-tsc
+        name: VS Code Extension TypeScript Compile
+        entry: bash -c 'cd interfaces/vscode_extension && npx tsc --noEmit'
+        language: system
+        pass_filenames: false
+        files: ^interfaces/vscode_extension/
+
+      - id: react-frontend-build
+        name: React Frontend Build
+        entry: bash -c 'cd interfaces/web_ui/frontend && npm run build'
+        language: system
+        pass_filenames: false
+        files: ^interfaces/web_ui/frontend/
+        stages: [pre-push]

@@ -32,5 +32,8 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
 
 EXPOSE 8000
 
+# Set PYTHONPATH so the backend can find core/ modules
+ENV PYTHONPATH=/app
+
 # Single process: FastAPI serves API + static dashboard
-CMD ["python", "-m", "uvicorn", "interfaces.web_ui.backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "interfaces.web_ui.backend.main:app", "--host", "0.0.0.0", "--port", "8000", "--log-level", "info"]
