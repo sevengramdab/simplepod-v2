@@ -19,7 +19,7 @@ interface ToolDef {
   shortName: string
   description: string
   longDescription: string
-  category: 'git' | 'monitoring' | 'benchmark' | 'documentation' | 'synthesis'
+  category: 'git' | 'monitoring' | 'benchmark' | 'documentation' | 'synthesis' | 'analysis'
   files: number
   icon: React.ElementType
   cliExample: string

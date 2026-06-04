@@ -8,6 +8,7 @@ export class ControlPanel {
     private _client: SwarmClient;
     private _pollTimer: NodeJS.Timeout | null = null;
     private _taskPollTimer: NodeJS.Timeout | null = null;
+    private _disposed: boolean = false;
 
     public static createOrShow(extensionUri: vscode.Uri, client: SwarmClient): void {
         const column = vscode.window.activeTextEditor
@@ -90,7 +91,7 @@ export class ControlPanel {
             let attempts = 0;
             if (this._taskPollTimer) { clearInterval(this._taskPollTimer); }
             this._taskPollTimer = setInterval(async () => {
-                if (!ControlPanel.currentPanel || this._panel.disposed) {
+                if (!ControlPanel.currentPanel || this._disposed) {
                     if (this._taskPollTimer) { clearInterval(this._taskPollTimer); this._taskPollTimer = null; }
                     return;
                 }
@@ -637,6 +638,7 @@ export class ControlPanel {
     }
 
     public dispose(): void {
+        this._disposed = true;
         if (this._pollTimer) { clearInterval(this._pollTimer); }
         if (this._taskPollTimer) { clearInterval(this._taskPollTimer); this._taskPollTimer = null; }
         ControlPanel.currentPanel = undefined;

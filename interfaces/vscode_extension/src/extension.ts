@@ -364,7 +364,8 @@ function registerCommands(context: vscode.ExtensionContext): void {
             vscode.window.showErrorMessage('❌ Game scan failed');
             return;
         }
-        const items = res.games.map((g: any) => ({
+        interface GameItem extends vscode.QuickPickItem { game: any }
+        const items: GameItem[] = res.games.map((g: any) => ({
             label: `${g.name}`,
             description: `${g.platform} · ${g.size_gb} GB`,
             detail: g.path,
